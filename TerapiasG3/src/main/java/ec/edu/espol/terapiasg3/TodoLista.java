@@ -5,22 +5,60 @@
 package ec.edu.espol.terapiasg3;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
- * @author Michelle
+ *
  */
 public class TodoLista {
-     ArrayList<Servicio> listaServicio=new ArrayList<>();
-    Servicio terapiaLenguaje = new Servicio();
-    Servicio terapiaPsicopedagogica = new Servicio();
+    ArrayList<Servicio> listServicio=new ArrayList<>();
+    ArrayList<Empleado> listEmpleado=new ArrayList<>();
+    ArrayList<Cliente> listCliente=new ArrayList<>();
+    ArrayList<Cita> listCita=new ArrayList<>();
+    ArrayList<Atencion> listAtencion=new ArrayList<>();
     
-    ArrayList<Empleado> listaEmpleado=new ArrayList<>();
+    //Comentario
+    Scanner sc = new Scanner(System.in);
     
-    ArrayList<Cliente> listaCliente=new ArrayList<>();
     
+    public void agregarServicios(Servicio s){
+        listServicio.add(s); 
+        System.out.println("Se agrego su nuevo servicio: "+ s.getNombreServ());
+    }
     
-    ArrayList<Cita> listaCita=new ArrayList<>();
+    public void editarServicios(String nombServ ){
+        
+        for (Servicio s: listServicio ){
+            if(s.getNombreServ().equals(nombServ)){
+                //Nombre de Servicio
+                System.out.println("Nombre del Servicio: " + s.getNombreServ());
+                System.out.println("Nuevo Nombre del Servicio: ");
+                String newserv = sc.next();
+                s.setNombreServ(newserv);
+                //Duracion de Servicio
+                System.out.println("Duracion del Servicio: " + s.getDuracionAtencion());
+                System.out.println("Nuevo Duracion del Servicio: ");
+                int newdura = sc.nextInt();
+                sc.nextLine();
+                s.setDuracionAtencion(newdura);
+                //Precio
+                System.out.println("Precio del Servicio: " + s.getPrecio());
+                System.out.println("Nuevo Precio del Servicio: ");
+                double newprice = sc.nextDouble();
+                s.setPrecio(newprice);
+                
+                
+            }
+        }
+        
+    }
     
-    ArrayList<Atencion> listaAtencion=new ArrayList<>();
+    public void eliminarServicios( String nombServ ){
+        for (Servicio s: listServicio ){
+            if(s.getNombreServ().equals(nombServ)){
+                s.setEstado(false);
+            }
+        }
+    }
 }
