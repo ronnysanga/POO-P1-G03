@@ -12,6 +12,7 @@ import java.util.Scanner;
  */
 public class Menu {
     public static void menuPrincipal(){
+        TodoLista t = new TodoLista();
         Scanner entrada = new Scanner(System.in);
         entrada.useDelimiter("\n");
         char op = ' ';
@@ -34,10 +35,14 @@ public class Menu {
                         opc = entrada.next().charAt(0);
                         switch(opc){
                             case '1':
-                                System.out.println("Agregar Servicio: ");
-                                
-
+                                //Validar solo la parte si el usuario puede poner el estado activo o No
+                                System.out.println("Agregar Nuevo Servicio");
+                                Servicio nuevoServicio = Servicio.nextServicio(entrada);
+                               
+                                t.agregarServicios(nuevoServicio);
+                                System.out.println("Nuemero de elementos de Servicios: "+ t.listServicio.size());
                                 break;
+
 
                             case '2':
                                 System.out.println("Editar Servicio: ");
