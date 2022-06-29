@@ -61,4 +61,41 @@ public class TodoLista {
             }
         }
     }
+    
+    public void agregarEmpleado (Empleado e){
+        listEmpleado.add(e);
+        System.out.println("Se agrego el nuevo empleado: " + e.getNombre());
+    }
+    
+    public void editarEmpleado(String nameEmp){
+        for (Empleado e: listEmpleado){
+            if(e.getNombre().equals(nameEmp)){
+                //Nombre de Empleado
+                System.out.println("Nombre del Empleado: " + e.getNombre());
+                System.out.println("Nuevo Nombre del Empleado: ");
+                String newname = sc.next();
+                e.setNombre(newname);
+                //Telefono del empleado
+                System.out.println("Telefono del Empleado: " + e.getTelefono());
+                System.out.println("Nuevo Telefono del Empleado: ");
+                String newtelf = sc.next();
+                e.setTelefono(newtelf);
+                //Email
+                System.out.println("Email del empleado: " + e.getEmail());
+                System.out.println("Nuevo email del empleado: ");
+                String newmail = sc.next();
+                e.setEmail(newmail);
+                
+                
+            }
+        }
+    }
+    
+    public void eliminarEmpleado(String nameEmp){
+        for (Empleado e: listEmpleado){
+            if(e.getNombre().equals(nameEmp)){
+                e.setEstado(false);
+            }
+        }
+    }
 }

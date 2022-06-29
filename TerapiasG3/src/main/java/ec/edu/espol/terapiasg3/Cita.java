@@ -1,22 +1,21 @@
 
 package ec.edu.espol.terapiasg3;
 
-import java.sql.Time;
-import java.util.Date;
+
 
 /**
  *
  * @author noeliapasaca
  */
 public class Cita {
-    private Date fechaC;
-    private Time hora;
+    private String fechaC;
+    private String hora;
     private Cliente cliente;
     //EMPLEADO QUE ESTA AGENDADO A ATENDER
     private Empleado empleadoC;
 
     //CONSTRUCTOR
-    public Cita(Date fechaC, Time hora, Cliente cliente, Empleado empleadoC) {
+    public Cita(String fechaC, String hora, Cliente cliente, Empleado empleadoC) {
         this.fechaC = fechaC;
         this.hora = hora;
         this.cliente = cliente;
@@ -24,11 +23,11 @@ public class Cita {
     }
     
     //GETTERS Y SETTERS
-    public Date getFechaC() {
+    public String getFechaC() {
         return fechaC;
     }
 
-    public Time getHora() {
+    public String getHora() {
         return hora;
     }
 
@@ -40,11 +39,11 @@ public class Cita {
         return empleadoC;
     }
 
-    public void setFechaC(Date fechaC) {
+    public void setFechaC(String fechaC) {
         this.fechaC = fechaC;
     }
 
-    public void setHora(Time hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 

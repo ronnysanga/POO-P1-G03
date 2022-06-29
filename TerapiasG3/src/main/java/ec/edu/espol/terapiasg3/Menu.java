@@ -19,15 +19,12 @@ public class Menu {
             System.out.println("Menu de opciones:\r\n"+
                     " 1. Servicios\r\n"+" 2. Empleados\r\n"+
                     " 3. Clientes\r\n"+" 4. Citas\r\n"+
-                    " 5. Atenciones\r\n"+" 6. Salir\r\n"+
-                    " 7. Salir");
+                    " 5. Atenciones\r\n"+" 6. Salir\r\n");
             System.out.println("Opcion:");
             op = entrada.next().charAt(0);
             switch(op){
                 case '1':
-                    System.out.println("Estos son los servicios");
-                    //Para cada servicio incluir el nombre, la duración de atención (en minutos), precio y estado(Activo, Inactivo)
-                    System.out.println("Agregar Servicio");
+                    System.out.println("Estos son los servicios");       
                     char opc = ' ';
                     do{
                         System.out.println("Menu de opciones:\r\n"+
@@ -65,12 +62,45 @@ public class Menu {
                         
                   
                     break;
-        /*        
+              
                 case '2':
-                    System.out.println("Ingreso la opcion 2");
+                    System.out.println("Estos son los empleados");  
+                    char opc2 = ' ';
+                    do{
+                        System.out.println("Menu de opciones:\r\n"+
+                                " 1. Agregar Empleado\r\n"+" 2. Editar Empleado\r\n"+
+                                " 3. Eliminar Empleado\r\n"+" 4. Regresar");
+                        System.out.println("Opcion:");
+                        opc2 = entrada.next().charAt(0);
+                        switch(opc2){
+                            case '1':
+                                System.out.println("Agregar empleado: ");
+                                
+
+                                break;
+
+                            case '2':
+                                System.out.println("Editar empleado: ");
+
+                                break;
+
+                            case '3':
+                                System.out.println("Eliminar empleado: ");
+
+                                break;
+                            case '4':
+                                System.out.println("Se ha retirado de Empleados");
+                                
+                                break;
+
+                            default:
+                                System.out.println("Opcion no valida...");
+                                break;
+                        }
+                    }while(opc2!='4');
 
                     break;                
-                    
+         /*           
                 case '3':
                     System.out.println("Ingreso la opcion 3");
 
@@ -94,10 +124,10 @@ public class Menu {
                 default:
                     System.out.println("Opcion no valida...");
                     break;
-        */            
+         */          
             }
         }while(op != '6');
-       
+      
    }
     
 }
