@@ -84,7 +84,7 @@ public class Menu {
                         opc2 = entrada.next().charAt(0);
                         switch(opc2){
                             case '1':
-                                System.out.println("Agregar Nuevo Servicio");
+                                System.out.println("Agregar Nuevo Empleado");
                                 Empleado nuevoEmpleado = Empleado.nextEmpleado(entrada);
                                
                                 t.agregarEmpleado(nuevoEmpleado);
@@ -115,12 +115,48 @@ public class Menu {
                     }while(opc2!='4');
 
                     break;                
-         /*           
+                    
                 case '3':
-                    System.out.println("E");
+                    System.out.println("Estos son los Clientes");
+                    System.out.println(t.listCliente);
+                    char opc3 = ' ';
+                    do{
+                        System.out.println("Menu de opciones:\r\n"+
+                                " 1. Agregar Cliente\r\n"+" 2. Editar Cliente\r\n"+
+                                " 3. Regresar");
+                        System.out.println("Opcion:");
+                        opc3 = entrada.next().charAt(0);
+                        switch(opc3){
+                            case '1':
+                                System.out.println("Agregar Nuevo Cliente");
+                                Cliente nuevoCliente = Cliente.nextCliente(entrada);
+                               
+                                t.agregarCliente(nuevoCliente);
+                                System.out.println("Numero de elementos de lista Clientes: "+ t.listCliente.size());
+                                
+
+                                break;
+
+                            case '2':
+                                System.out.println("Editar cliente: ");
+                                
+
+                                break;
+
+                            case '3':
+                                System.out.println("Se ha retirado de Clientes");
+
+                                break;
+                          
+
+                            default:
+                                System.out.println("Opcion no valida...");
+                                break;
+                        }
+                    }while(opc3!='3');
 
                     break;
-                    
+          /*          
                 case '4':
                     System.out.println("Ingreso la opcion 4");                   
 

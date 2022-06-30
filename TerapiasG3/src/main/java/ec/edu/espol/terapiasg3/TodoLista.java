@@ -100,8 +100,38 @@ public class TodoLista {
     }
     
     
-    //agregar cliente editar cliente michelle
+    public void agregarCliente (Cliente c){
+        listCliente.add(c);
+        System.out.println("Se agrego el nuevo cliente: " + c.getNombre());
+    }
     
+    public void editarCliente(String nameCliente){
+        for (Cliente c: listCliente){
+            if(c.getNombre().equals(nameCliente)){
+                //Nombre de cliente
+                System.out.println("Nombre del Cliente: " + c.getNombre());
+                System.out.println("Nuevo Nombre del Cliente: ");
+                String newname = sc.next();
+                c.setNombre(newname);
+                //Telefono del cliente
+                System.out.println("Telefono del Cliente: " + c.getTelefono());
+                System.out.println("Nuevo Telefono del Cliente: ");
+                String newtelf = sc.next();
+                c.setTelefono(newtelf);
+                //Email
+                System.out.println("Email del Cliente: " + c.getEmail());
+                System.out.println("Nuevo email del Cliente: ");
+                String newmail = sc.next();
+                c.setEmail(newmail);
+                //datos del representante
+                System.out.println("datos del representante: " + c.getDatoRepres());
+                System.out.println("Nuevo dato del representante: ");
+                String newdato = sc.next();
+                c.setDatoRepres(newdato);
+                
+            }
+        }
+    }
     
     
     public static void inicializarSistema(TodoLista t){

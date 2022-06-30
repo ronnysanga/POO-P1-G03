@@ -5,6 +5,8 @@
  */
 package ec.edu.espol.terapiasg3;
 
+import java.util.Scanner;
+
 /**
  *
  * @author dell
@@ -29,4 +31,23 @@ public class Cliente extends Persona{
     }
     
     //nextcliente
+     public static Cliente nextCliente(Scanner sc){ 
+        System.out.println("Ingrese Nombre del cliente: ");
+        String nameCliente = sc.next();
+        System.out.println("Ingrese cedula del cliente: ");
+        String cedulaCliente = sc.next();
+        System.out.println("Ingrese telefono del cliente: ");
+        String telCliente = sc.next();
+        System.out.println("Ingrese email del cliente: ");
+        String emailCliente = sc.next();
+        System.out.println("Ingrese datos del representante: ");
+        String datoRepres = sc.next();
+                
+        Cliente nuevoClient = new Cliente(datoRepres,cedulaCliente, nameCliente, telCliente, emailCliente);
+        return nuevoClient; 
+    }
+     @Override
+    public String toString() {
+        return "Cliente{" + super.toString() + '}';
+    }
 }
