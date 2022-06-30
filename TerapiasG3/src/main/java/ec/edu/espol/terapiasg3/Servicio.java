@@ -95,13 +95,19 @@ public class Servicio {
         int duracionAtencion = sc.nextInt();
         //ese nexline para que no haya problemas al input
         sc.nextLine();
-        System.out.println("Ingrese precio: ");
+        System.out.println("Ingrese precio (utilice coma para decimales) : ");
         double precio = sc.nextDouble();
                 
         Servicio newServicio = new Servicio(nombreServ,duracionAtencion,precio,true);
         return newServicio;
         
     }
+
+    @Override
+    public String toString() {
+        return "Servicio{" + "nombreServ=" + nombreServ + ", duracionAtencion=" + duracionAtencion + ", precio=" + precio + '}';
+    }
+    
     
     
 }

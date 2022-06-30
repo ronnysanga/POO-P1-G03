@@ -34,5 +34,26 @@ public class Empleado extends Persona{
         
     }*/
     
+    public static Empleado nextEmpleado(Scanner sc){ 
+        System.out.println("Ingrese Nombre del empleado: ");
+        String nameEmp = sc.next();
+        System.out.println("Ingrese cedula del empleado: ");
+        String cedulaEmp = sc.next();
+        System.out.println("Ingrese telefono del empleado: ");
+        String telEmp = sc.next();
+        System.out.println("Ingrese email del empleado: ");
+        String emailEmp = sc.next();
+                
+        Empleado nuevoEmp = new Empleado(true, cedulaEmp, nameEmp, telEmp, emailEmp);
+        return nuevoEmp; 
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" + super.toString() + '}';
+    }
+
+    
+    
     
 }

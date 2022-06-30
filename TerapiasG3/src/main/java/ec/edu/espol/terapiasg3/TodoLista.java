@@ -98,5 +98,36 @@ public class TodoLista {
             }
         }
     }
+    
+    
+    public static void inicializarSistema(TodoLista t){
+//        TodoLista t = new TodoLista();
+        //creando un empleado
+        Empleado emp1 = new Empleado(true,"0911111111","Jorge","09222222222","jorge@correo.com");
+        //creando dos clientes
+        Cliente cl1 = new Cliente("datos de representante cl1","09333333333","Daniela","0944444444","daniela@correo.com");
+        Cliente cl2 = new Cliente("datos de representante cl2","09555555555","Karina","0966666666","karina@correo.com");
+        //creando servicios
+        Servicio ser1 = new Servicio("Terapia de lenguaje",120,20.00,true);
+        Servicio ser2 = new Servicio("Terapia psicopedagógica",60,10.00,true);
+        //creando dos citas sin atender
+        Cita cit1 = new Cita("26/06/2022","16:00",cl1,emp1);
+        Cita cit2 = new Cita("27/06/2022","16:00",cl1,emp1);
+        Cita cit3 = new Cita("24/06/2022","13:00",cl2,emp1);
+        //creando una atencion
+        Atencion ate1 = new Atencion(120,emp1,cit3); 
+        
+
+        t.listEmpleado.add(emp1);
+        t.listCliente.add(cl1);
+        t.listCliente.add(cl2);
+        t.listServicio.add(ser1);
+        t.listServicio.add(ser2);
+        t.listCita.add(cit1);
+        t.listCita.add(cit2);
+        t.listCita.add(cit3);
+        t.listAtencion.add(ate1);
+    }
+
 }
 

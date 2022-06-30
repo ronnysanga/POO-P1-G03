@@ -13,6 +13,9 @@ import java.util.Scanner;
 public class Menu {
     public static void menuPrincipal(){
         TodoLista t = new TodoLista();
+        TodoLista.inicializarSistema(t);
+        
+        
         Scanner entrada = new Scanner(System.in);
         entrada.useDelimiter("\n");
         char op = ' ';
@@ -25,7 +28,8 @@ public class Menu {
             op = entrada.next().charAt(0);
             switch(op){
                 case '1':
-                    System.out.println("Estos son los servicios");       
+                    System.out.println("Estos son los servicios");
+                    System.out.println(t.listServicio);
                     char opc = ' ';
                     do{
                         System.out.println("Menu de opciones:\r\n"+
@@ -69,7 +73,8 @@ public class Menu {
                     break;
               
                 case '2':
-                    System.out.println("Estos son los empleados");  
+                    System.out.println("Estos son los empleados");
+                    System.out.println(t.listEmpleado);
                     char opc2 = ' ';
                     do{
                         System.out.println("Menu de opciones:\r\n"+
@@ -79,13 +84,18 @@ public class Menu {
                         opc2 = entrada.next().charAt(0);
                         switch(opc2){
                             case '1':
-                                System.out.println("Agregar empleado: ");
+                                System.out.println("Agregar Nuevo Servicio");
+                                Empleado nuevoEmpleado = Empleado.nextEmpleado(entrada);
+                               
+                                t.agregarEmpleado(nuevoEmpleado);
+                                System.out.println("Numero de elementos de lista Empleados: "+ t.listEmpleado.size());
                                 
 
                                 break;
 
                             case '2':
                                 System.out.println("Editar empleado: ");
+                                
 
                                 break;
 
