@@ -40,7 +40,7 @@ public class Menu {
                                 Servicio nuevoServicio = Servicio.nextServicio(entrada);
                                
                                 t.agregarServicios(nuevoServicio);
-                                System.out.println("Nuemero de elementos de Servicios: "+ t.listServicio.size());
+                                System.out.println("Nuemero de elementos de lista Servicios: "+ t.listServicio.size());
                                 break;
 
 

@@ -97,11 +97,8 @@ public class Servicio {
         sc.nextLine();
         System.out.println("Ingrese precio: ");
         double precio = sc.nextDouble();
-        System.out.println("Ingrese estado del servicio: ");
-        String est = sc.next();
-        boolean estado = Servicio.verBooleanEstadoServicios(est);
                 
-        Servicio newServicio = new Servicio(nombreServ,duracionAtencion,precio,estado);
+        Servicio newServicio = new Servicio(nombreServ,duracionAtencion,precio,true);
         return newServicio;
         
     }

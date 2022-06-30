@@ -5,6 +5,8 @@
  */
 package ec.edu.espol.terapiasg3;
 
+import java.util.Scanner;
+
 /**
  *
  * @author dell
@@ -26,6 +28,11 @@ public class Empleado extends Persona{
     }
     
     
+    //public Empleado(boolean estado, String cedula, String nombre, String telefono, String email)
+    /*
+    public static Empleado nextEmpleado(Scanner sc){ 
+        
+    }*/
     
     
 }
