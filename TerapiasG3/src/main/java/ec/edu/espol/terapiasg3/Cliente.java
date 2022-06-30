@@ -17,7 +17,7 @@ public class Cliente extends Persona{
         this.datoRepres = datoRepres;
     }
     
-    //Commentario 1
+
     
 
     public String getDatoRepres() {
@@ -28,5 +28,5 @@ public class Cliente extends Persona{
         this.datoRepres = datoRepres;
     }
     
-    
+    //nextcliente
 }

@@ -117,7 +117,7 @@ public class Menu {
                     break;                
          /*           
                 case '3':
-                    System.out.println("Ingreso la opcion 3");
+                    System.out.println("E");
 
                     break;
                     
