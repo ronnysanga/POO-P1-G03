@@ -105,11 +105,20 @@ public class Menu {
                             case '2':
                                 System.out.println("Editar empleado: ");
                                 
+                                System.out.println("Ingrese el nombre del Empleado: ");
+                                String nombEmp = entrada.next();
+                                t.editarEmpleado(nombEmp);
+                                System.out.println(t.listEmpleado);
 
                                 break;
 
                             case '3':
                                 System.out.println("Eliminar empleado: ");
+                                System.out.println("Ingrese el nombre del Empleado: ");
+                                String nombEmpl = entrada.next();
+                                t.eliminarEmpleado(nombEmpl); 
+                                System.out.println(t.listEmpleado);
+                                
 
                                 break;
                             case '4':

@@ -79,8 +79,13 @@ public class TodoLista {
     }
     
     public void editarEmpleado(String nameEmp){
+        
+        boolean a = true;
+        
         for (Empleado e: listEmpleado){
+                    
             if(e.getNombre().equals(nameEmp)){
+                a = false;
                 //Nombre de Empleado
                 System.out.println("Nombre del Empleado: " + e.getNombre());
                 System.out.println("Nuevo Nombre del Empleado: ");
@@ -97,17 +102,26 @@ public class TodoLista {
                 String newmail = sc.next();
                 e.setEmail(newmail);
                 
-                
             }
+           
         }
+        
+        if(a){
+            System.out.println("NO EXISTE EL EMPLEADO BUSCADO");
+        }
+        
     }
     
-    public void eliminarEmpleado(String nameEmp){
+    
+    public void eliminarEmpleado( String nameEmp ){
         for (Empleado e: listEmpleado){
             if(e.getNombre().equals(nameEmp)){
                 e.setEstado(false);
+                System.out.println("Se cambio a estado:");
+                System.out.println(Empleado.verEstadoEmpleado(e.isEstado()));
             }
         }
+        
     }
     
     
@@ -117,8 +131,10 @@ public class TodoLista {
     }
     
     public void editarCliente(String nameCliente){
+        boolean a = true;
         for (Cliente c: listCliente){
             if(c.getNombre().equals(nameCliente)){
+                a = false;
                 //Nombre de cliente
                 System.out.println("Nombre del Cliente: " + c.getNombre());
                 System.out.println("Nuevo Nombre del Cliente: ");
@@ -141,6 +157,9 @@ public class TodoLista {
                 c.setDatoRepres(newdato);
                 
             }
+        }
+        if(a){
+            System.out.println("NO EXISTE EL CLIENTE BUSCADO");
         }
     }
     

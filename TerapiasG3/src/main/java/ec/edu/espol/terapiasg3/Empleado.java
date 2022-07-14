@@ -53,7 +53,15 @@ public class Empleado extends Persona{
         return "Empleado{" + super.toString() + '}';
     }
 
-    
+    public static String verEstadoEmpleado(boolean estado){
+        String estadoactual = "";
+        if(estado){
+            estadoactual = "Activo";
+        }else{
+            estadoactual = "Inactivo";
+        }
+        return estadoactual;
+    }
     
     
 }
