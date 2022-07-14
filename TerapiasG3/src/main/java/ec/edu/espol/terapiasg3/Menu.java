@@ -147,7 +147,12 @@ public class Menu {
                                 break;
 
                             case '2':
-                                System.out.println("Editar cliente: ");
+                                //System.out.println(t.listServicio);
+                                System.out.println("Editar cliente: ");                               
+                                System.out.println("Ingrese el nombre del Cliente: ");
+                                String nombCliente = entrada.next();
+                                t.editarCliente(nombCliente);
+                                //System.out.println(t.listCliente);
                                 
 
                                 break;
