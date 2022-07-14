@@ -1,6 +1,8 @@
 
 package ec.edu.espol.terapiasg3;
 
+import java.util.Scanner;
+
 
 
 /**
@@ -55,6 +57,21 @@ public class Cita {
         this.empleadoC = empleadoC;
     }
     
-    
+    //nextCita
+    /*
+    public static Cliente nextCita(Scanner sc){ 
+        System.out.println("Ingrese fecha de la cita: ");
+        String fechaC = sc.next();
+        System.out.println("Ingrese hora de la cita: ");
+        String hora = sc.next();
+        System.out.println("Ingrese nombre del cliente: ");
+        String cliente = sc.next();
+        System.out.println("Ingrese nombre del empleado: ");
+        String Empleado = sc.next();
+        
+       }         
+        //Cita nuevaCita= new Cita(String fechaC, String hora, Cliente cliente, Empleado empleadoC);
+       // return nuevaCita; 
+    */
     
 }

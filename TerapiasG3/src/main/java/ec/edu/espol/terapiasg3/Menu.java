@@ -179,12 +179,44 @@ public class Menu {
                     }while(opc3!='3');
 
                     break;
-          /*          
+                    
                 case '4':
-                    System.out.println("Ingreso la opcion 4");                   
+                    char opc4= ' ';
+                    do{
+                        System.out.println("Menu de opciones:\r\n"+
+                                " 1. Crear Cita\r\n"+" 2. Eliminar Cita\r\n"+
+                                " 3. Consultar cita por fechas");
+                        System.out.println("Opcion:");
+                        opc4 = entrada.next().charAt(0); 
+                        switch(opc4){
+                            case '1':
+                                System.out.println("Crear Cita");
+            
+                                //Cita nuevaCita = Cita.nextCita(entrada);
+                                
+                                
+                                
+                              case '4':
+                                System.out.println("Se ha retirado de Empleados");
+                                
+                                break;
+
+                            default:
+                                System.out.println("Opcion no valida...");
+                                break;
+                        }
+                        
+                        
+                        
+                        
+                          
+                        
+                        
+                    }while(opc4!='4');
+                                     
 
                     break;
-                    
+          /*           
                 case '5':
                     System.out.println("Ingreso la opcion 5");
 

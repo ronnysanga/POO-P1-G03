@@ -163,6 +163,11 @@ public class TodoLista {
         }
     }
     
+    public void crearCita (Cita ci){
+        listCita.add(ci);
+        System.out.println("Se creo una nueva cita: " );
+    }
+    
     
     public static void inicializarSistema(TodoLista t){
 //        TodoLista t = new TodoLista();
