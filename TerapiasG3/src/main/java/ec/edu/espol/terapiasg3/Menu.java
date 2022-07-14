@@ -49,12 +49,21 @@ public class Menu {
 
 
                             case '2':
+                                //System.out.println(t.listServicio);
                                 System.out.println("Editar Servicio: ");
+                                System.out.println("Ingrese el nombre del Servicio: ");
+                                String nombServ = entrada.next();
+                                t.editarServicios(nombServ);
+                                //System.out.println(t.listServicio);
 
                                 break;
 
                             case '3':
+                                //System.out.println(t.listServicio);
                                 System.out.println("Eliminar Servicio: ");
+                                System.out.println("Ingrese el nombre del Servicio: ");
+                                String nombServone = entrada.next();
+                                t.eliminarServicios(nombServone);                                                            
 
                                 break;
                             case '4':

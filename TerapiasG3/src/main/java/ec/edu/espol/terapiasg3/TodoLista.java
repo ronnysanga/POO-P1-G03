@@ -29,12 +29,16 @@ public class TodoLista {
     
     public void editarServicios(String nombServ ){
         
+        boolean a = true;
+        
         for (Servicio s: listServicio ){
+                    
             if(s.getNombreServ().equals(nombServ)){
+                a = false;
                 //Nombre de Servicio
                 System.out.println("Nombre del Servicio: " + s.getNombreServ());
                 System.out.println("Nuevo Nombre del Servicio: ");
-                String newserv = sc.next();
+                String newserv = sc.nextLine();
                 s.setNombreServ(newserv);
                 //Duracion de Servicio
                 System.out.println("Duracion del Servicio: " + s.getDuracionAtencion());
@@ -44,12 +48,16 @@ public class TodoLista {
                 s.setDuracionAtencion(newdura);
                 //Precio
                 System.out.println("Precio del Servicio: " + s.getPrecio());
-                System.out.println("Nuevo Precio del Servicio: ");
+                System.out.println("Nuevo Precio del Servicio(Poner coma para decimales): ");
                 double newprice = sc.nextDouble();
-                s.setPrecio(newprice);
-                
+                s.setPrecio(newprice);   
                 
             }
+           
+        }
+        
+        if(a){
+            System.out.println("NO EXISTE EL SERVICIO BUSCADO");
         }
         
     }
@@ -58,8 +66,11 @@ public class TodoLista {
         for (Servicio s: listServicio ){
             if(s.getNombreServ().equals(nombServ)){
                 s.setEstado(false);
+                System.out.println("Se cambio a estado:");
+                System.out.println(Servicio.verEstadoServicios(s.isEstado()));
             }
         }
+        
     }
     
     public void agregarEmpleado (Empleado e){
