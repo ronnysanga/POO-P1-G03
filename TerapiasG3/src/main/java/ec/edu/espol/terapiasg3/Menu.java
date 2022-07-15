@@ -185,55 +185,90 @@ public class Menu {
                     do{
                         System.out.println("Menu de opciones:\r\n"+
                                 " 1. Crear Cita\r\n"+" 2. Eliminar Cita\r\n"+
-                                " 3. Consultar cita por fechas");
+                                " 3. Consultar cita por fechas\r\n" + " 4. Salir");
                         System.out.println("Opcion:");
                         opc4 = entrada.next().charAt(0); 
                         switch(opc4){
                             case '1':
                                 System.out.println("Crear Cita");
-            
-                                //Cita nuevaCita = Cita.nextCita(entrada);
-                                
-                                
-                                
-                              case '4':
-                                System.out.println("Se ha retirado de Empleados");
+                                Cita nuevaCita = Cita.nextCita(entrada,t);
+                                t.crearCita(nuevaCita);
+                                break;
+                            case '2':
+                                System.out.println("Eliminar Cita");
+                                System.out.println("Ingrese la cedula del cliente: ");
+                                String cedula = entrada.next();
+                                t.eliminarCita(entrada, cedula);
+                                break;
+                            
+                            case '3':
+                                System.out.println("Consultar cita por fechas");
+                                System.out.println("Ingrese la fecha de la cita");
+                                String fecha = entrada.next();
+                                t.buscarCitaPorFecha(fecha);
+                                break;
+                           
+                            case '4':
+                                System.out.println("Se ha retirado de citas");
                                 
                                 break;
 
                             default:
                                 System.out.println("Opcion no valida...");
                                 break;
-                        }
-                        
-                        
-                        
-                        
-                          
-                        
-                        
+                        }              
                     }while(opc4!='4');
-                                     
-
                     break;
-          /*           
+                     
                 case '5':
-                    System.out.println("Ingreso la opcion 5");
+                    char opc5= ' ';
+                    do{
+                        System.out.println("Menu de opciones:\r\n"+
+                                " 1. Registrar atencion\r\n"+" 2. Consultar atencion\r\n"+
+                                " 3. Salir");
+                        System.out.println("Opcion:");
+                        opc5 = entrada.next().charAt(0); 
+                        switch(opc5){
+                            case '1':
+                                System.out.println("Registrar atencion");
+                                
+                                
+                                
+                                
+                                break;
+                                
+                            case '2':
+                                System.out.println("Consultar atencion");
+                                
+                                break;
+                           
+                            case '3':
+                                System.out.println("Se ha retirado de atenciones");
+                                
+                                break;
+
+                            default:
+                                System.out.println("Opcion no valida...");
+                                break;
+                        }              
+                    }while(opc5!='3');
+                    
+                    
 
                     break;
                     
                 case '6':
-                    System.out.println("Gracias por su tiempo");
+                    System.out.println("Gracias por su tiempo.");
 
                     break;
   
                 default:
                     System.out.println("Opcion no valida...");
                     break;
-         */          
+                   
             }
         }while(op != '6');
-      
+
    }
     
 }

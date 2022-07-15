@@ -198,17 +198,37 @@ public class TodoLista {
         return c;
     }
     
-    //BuscarCita por fecha
-    public void buscarCitaporFecha (String fecha ){
-        for (Cita cit: listCita ){
-            if(cit.getFechaC().equals(fecha)){
-                System.out.println(cit);   
-            }
-        }
+   
+    public void crearCita (Cita ci){
+        String empleado = ci.getEmpleadoC().getNombre();
+        String fecha = ci.getFechaC();
+        String hora = ci.getHora();
+        for (int i = 0; i < listCita.size(); i++){
+            Cita c = listCita.get(i);
+            if(c.getEmpleadoC().getNombre().equals(empleado)){
+                if(ci.getEmpleadoC().isEstado()){
+                    if((c.getFechaC().equals(fecha)) && (c.getHora().equals(hora))){
+                        System.out.println("El empleado se encuenta ocupado en esa fecha y hora");
+                        i = listCita.size();
+                    }else{
+                        listCita.add(ci);
+                        System.out.println("Se creo la nueva cita: " + ci);
 
+                        i = listCita.size();
+                    }
+                }else{
+                    System.out.println("El empleado se encuentra inactivo");
+                }
+            }else{
+                System.out.println("No se encuentra al empleado ingresado");
+            }
+        }    
     }
     
-    public void eliminarCita (Scanner sc, String Cedula, String fecha, String hora){
+ 
+    
+    
+    public void eliminarCita (Scanner sc, String Cedula){
         //Imprime Citas del Cliente con su cedula              
         for (Cita c: listCita){
             if(c.getCliente().getCedula().equals(Cedula)){             
@@ -217,22 +237,35 @@ public class TodoLista {
         }
         
         System.out.println("Ingrese Fecha de la cita a eliminar: ");
-        String fec = sc.nextLine();
+        String fec = sc.next();
         System.out.println("Ingrese Hora de la cita a eliminar: ");
-        String hor = sc.nextLine();  
+        String hor = sc.next();  
         listCita.remove(buscarCita(fec, hor));       
-        System.out.println("Se elimino la Cita de la fecha "+fec+ " y hora" + hor);
+        System.out.println("Se elimino la Cita de la fecha "+fec+ " y hora " + hor);
         
     }
     
-    public void crearCita (Cita ci){
-        listCita.add(ci);
-        System.out.println("Se creo una nueva cita: " );
+    //BuscarCita por fecha
+    public void buscarCitaPorFecha (String fecha ){
+        System.out.println("Aqui estan las citas de la fecha ingresada:");
+        for (Cita cit: listCita ){
+            if(cit.getFechaC().equals(fecha)){
+                System.out.println(cit);   
+            }
+        }
+
+    }
+    
+    //metodos de atencion
+    
+    public void registrarAtencion(){
+        
     }
     
     
+    
     public static void inicializarSistema(TodoLista t){
-//        TodoLista t = new TodoLista();
+
         //creando un empleado
         Empleado emp1 = new Empleado(true,"0911111111","Jorge","09222222222","jorge@correo.com");
         //creando dos clientes

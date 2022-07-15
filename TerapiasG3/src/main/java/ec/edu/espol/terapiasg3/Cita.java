@@ -57,8 +57,7 @@ public class Cita {
         this.empleadoC = empleadoC;
     }
     
-    //nextCita
-    //Cita(String fechaC, String hora, Cliente cliente, Empleado empleadoC) 
+    
     public static Cita nextCita(Scanner sc,TodoLista t){ 
         System.out.println("Ingrese fecha de la cita: ");
         String fechaC = sc.next();
