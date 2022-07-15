@@ -58,20 +58,31 @@ public class Cita {
     }
     
     //nextCita
-    /*
-    public static Cliente nextCita(Scanner sc){ 
+    //Cita(String fechaC, String hora, Cliente cliente, Empleado empleadoC) 
+    public static Cita nextCita(Scanner sc,TodoLista t){ 
         System.out.println("Ingrese fecha de la cita: ");
         String fechaC = sc.next();
         System.out.println("Ingrese hora de la cita: ");
         String hora = sc.next();
         System.out.println("Ingrese nombre del cliente: ");
-        String cliente = sc.next();
+        String nameCliente = sc.next();
         System.out.println("Ingrese nombre del empleado: ");
-        String Empleado = sc.next();
+        String nameEmpleado = sc.next();
+        
+        Cliente client = t.buscarCliente(nameCliente);
+        
+        Empleado empl = t.buscarEmpleado(nameEmpleado);
+  
+        Cita nuevaCita = new Cita(fechaC, hora, client, empl);
+        
+        return nuevaCita;
         
        }         
-        //Cita nuevaCita= new Cita(String fechaC, String hora, Cliente cliente, Empleado empleadoC);
-       // return nuevaCita; 
-    */
+
+    @Override
+    public String toString() {
+        return "Cita{" + "fechaC=" + fechaC + ", hora=" + hora + ", cliente=" + cliente.getNombre() + ", empleadoC=" + empleadoC.getNombre() + '}';
+    }
+         
     
 }

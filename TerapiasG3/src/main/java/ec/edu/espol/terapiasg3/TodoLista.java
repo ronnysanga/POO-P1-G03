@@ -12,11 +12,11 @@ import java.util.Scanner;
  *
  */
 public class TodoLista {
-    ArrayList<Servicio> listServicio=new ArrayList<>();
-    ArrayList<Empleado> listEmpleado=new ArrayList<>();
-    ArrayList<Cliente> listCliente=new ArrayList<>();
-    ArrayList<Cita> listCita=new ArrayList<>();
-    ArrayList<Atencion> listAtencion=new ArrayList<>();
+    public ArrayList<Servicio> listServicio=new ArrayList<>();
+    public ArrayList<Empleado> listEmpleado=new ArrayList<>();
+    public ArrayList<Cliente> listCliente=new ArrayList<>();
+    public ArrayList<Cita> listCita=new ArrayList<>();
+    public ArrayList<Atencion> listAtencion=new ArrayList<>();
     
     //Comentario
     Scanner sc = new Scanner(System.in);
@@ -73,6 +73,18 @@ public class TodoLista {
         
     }
     
+    
+    //buscar empleado
+    public Empleado buscarEmpleado (String nameEmpleado){
+        Empleado e = null;
+        for (Empleado emple: listEmpleado ){
+            if(emple.getNombre().equals(nameEmpleado)){
+                e = emple;
+            }
+        }
+        return e;
+    }
+    
     public void agregarEmpleado (Empleado e){
         listEmpleado.add(e);
         System.out.println("Se agrego el nuevo empleado: " + e.getNombre());
@@ -125,6 +137,17 @@ public class TodoLista {
     }
     
     
+    //metodo buscar cliente
+    public Cliente buscarCliente (String nameCliente){
+        Cliente c = null;
+        for (Cliente client: listCliente ){
+            if(client.getNombre().equals(nameCliente)){
+                c = client;
+            }
+        }
+        return c;
+    }
+    
     public void agregarCliente (Cliente c){
         listCliente.add(c);
         System.out.println("Se agrego el nuevo cliente: " + c.getNombre());
@@ -161,6 +184,45 @@ public class TodoLista {
         if(a){
             System.out.println("NO EXISTE EL CLIENTE BUSCADO");
         }
+    }
+    //metodo buscar cita con fecha y hora
+    public Cita buscarCita (String fecha, String hora ){
+        Cita c = null;
+        for (Cita cit: listCita ){
+            if(cit.getFechaC().equals(fecha)){
+                if(cit.getHora().equals(hora)){
+                    c = cit;
+                }
+            }
+        }
+        return c;
+    }
+    
+    //BuscarCita por fecha
+    public void buscarCitaporFecha (String fecha ){
+        for (Cita cit: listCita ){
+            if(cit.getFechaC().equals(fecha)){
+                System.out.println(cit);   
+            }
+        }
+
+    }
+    
+    public void eliminarCita (Scanner sc, String Cedula, String fecha, String hora){
+        //Imprime Citas del Cliente con su cedula              
+        for (Cita c: listCita){
+            if(c.getCliente().getCedula().equals(Cedula)){             
+                System.out.println(c);              
+            }
+        }
+        
+        System.out.println("Ingrese Fecha de la cita a eliminar: ");
+        String fec = sc.nextLine();
+        System.out.println("Ingrese Hora de la cita a eliminar: ");
+        String hor = sc.nextLine();  
+        listCita.remove(buscarCita(fec, hor));       
+        System.out.println("Se elimino la Cita de la fecha "+fec+ " y hora" + hor);
+        
     }
     
     public void crearCita (Cita ci){
