@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ec.edu.espol.terapiasg3;
+
+import ec.edu.espol.terapiasg3.Inicio.Menu;
 
 /**
  *
@@ -12,6 +9,11 @@ package ec.edu.espol.terapiasg3;
 public class Main {
    
     public static void main(String[] args) {
+        //Se llama al menu
+        System.out.println("NOTA:");
+        System.out.println("Formato de fecha (DD/MM/AAAA)");   
+        System.out.println("Formato de hora (hh:mm Formato de 24 horas)"); 
+        
         Menu.menuPrincipal();
         
     }

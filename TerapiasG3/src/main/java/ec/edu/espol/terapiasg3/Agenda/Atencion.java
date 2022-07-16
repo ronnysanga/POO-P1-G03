@@ -1,10 +1,7 @@
+package ec.edu.espol.terapiasg3.Agenda;
 
-package ec.edu.espol.terapiasg3;
+import ec.edu.espol.terapiasg3.Personas.Empleado;
 
-/**
- *
- * @author noeliapasaca
- */
 public class Atencion {
     //duracion en minutos
     private int duracion;
@@ -13,7 +10,6 @@ public class Atencion {
     private Cita cita;
     
     //CONSTRUCTOR
-
     public Atencion(int duracion, Empleado empleadoA, Cita cita) {
         this.duracion = duracion;
         this.empleadoA = empleadoA;
@@ -21,7 +17,6 @@ public class Atencion {
     }
     
     //GETTERS Y SETTERS
-
     public int getDuracion() {
         return duracion;
     }

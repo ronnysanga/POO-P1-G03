@@ -1,16 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package ec.edu.espol.terapiasg3;
+package ec.edu.espol.terapiasg3.Inicio;
 
+import ec.edu.espol.terapiasg3.Agenda.Servicio;
+import ec.edu.espol.terapiasg3.Agenda.Atencion;
+import ec.edu.espol.terapiasg3.Agenda.Cita;
+import ec.edu.espol.terapiasg3.Personas.Cliente;
+import ec.edu.espol.terapiasg3.Personas.Empleado;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- *
- */
 public class TodoLista {
     public ArrayList<Servicio> listServicio=new ArrayList<>();
     public ArrayList<Empleado> listEmpleado=new ArrayList<>();
@@ -18,7 +15,6 @@ public class TodoLista {
     public ArrayList<Cita> listCita=new ArrayList<>();
     public ArrayList<Atencion> listAtencion=new ArrayList<>();
     
-    //Comentario
     Scanner sc = new Scanner(System.in);
     
     
@@ -27,12 +23,10 @@ public class TodoLista {
         System.out.println("Se agrego su nuevo servicio: "+ s.getNombreServ());
     }
     
-    public void editarServicios(String nombServ ){
-        
+    public void editarServicios(String nombServ ){        
         boolean a = true;
         
-        for (Servicio s: listServicio ){
-                    
+        for (Servicio s: listServicio ){                    
             if(s.getNombreServ().equals(nombServ)){
                 a = false;
                 //Nombre de Servicio
@@ -50,10 +44,8 @@ public class TodoLista {
                 System.out.println("Precio del Servicio: " + s.getPrecio());
                 System.out.println("Nuevo Precio del Servicio(Poner coma para decimales): ");
                 double newprice = sc.nextDouble();
-                s.setPrecio(newprice);   
-                
-            }
-           
+                s.setPrecio(newprice);                  
+            }       
         }
         
         if(a){
@@ -238,9 +230,9 @@ public class TodoLista {
             }
         }
         
-        System.out.println("Ingrese Fecha de la cita a eliminar: ");
+        System.out.println("Ingrese Fecha(DD/MM/AAAA) de la cita a eliminar: ");
         String fec = sc.next();
-        System.out.println("Ingrese Hora de la cita a eliminar: ");
+        System.out.println("Ingrese Hora(hh:mm Formato de 24 horas) de la cita a eliminar: ");
         String hor = sc.next();  
         listCita.remove(buscarCita(fec, hor));       
         System.out.println("Se elimino la Cita de la fecha "+fec+ " y hora " + hor);
@@ -281,9 +273,9 @@ public class TodoLista {
     //buscar cita por cedula
     public Cita buscarCita(Scanner entrada, String cedula){
         Cita cita=null;
-        System.out.println("Ingrese la fecha: ");
+        System.out.println("Ingrese la fecha(DD/MM/AAAA): ");
         String fecha=entrada.next();
-        System.out.println("Ingrese la hora: ");
+        System.out.println("Ingrese la hora(hh:mm Formato de 24 horas): ");
         String hora=entrada.next();
         for (Cita c: listCita){
             if(c.getCliente().getCedula().equals(cedula)){
@@ -331,7 +323,7 @@ public class TodoLista {
                   
                     break;
                 case '3':
-                    System.out.println("Ingrese la fecha de atención: ");
+                    System.out.println("Ingrese la fecha(DD/MM/AAAA) de atención: ");
                     String fecha=entrada.next();
                     for(Atencion at:listAtencion){
                         if(at.getCita().getFechaC().equals(fecha)){

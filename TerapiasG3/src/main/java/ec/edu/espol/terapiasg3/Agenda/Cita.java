@@ -1,14 +1,10 @@
+package ec.edu.espol.terapiasg3.Agenda;
 
-package ec.edu.espol.terapiasg3;
-
+import ec.edu.espol.terapiasg3.Personas.Cliente;
+import ec.edu.espol.terapiasg3.Personas.Empleado;
+import ec.edu.espol.terapiasg3.Inicio.TodoLista;
 import java.util.Scanner;
 
-
-
-/**
- *
- * @author noeliapasaca
- */
 public class Cita {
     private String fechaC;
     private String hora;
@@ -57,11 +53,11 @@ public class Cita {
         this.empleadoC = empleadoC;
     }
     
-    
+    //metodo para los inputs del usuario
     public static Cita nextCita(Scanner sc,TodoLista t){ 
-        System.out.println("Ingrese fecha de la cita: ");
+        System.out.println("Ingrese fecha de la cita(DD/MM/AAAA): ");
         String fechaC = sc.next();
-        System.out.println("Ingrese hora de la cita: ");
+        System.out.println("Ingrese hora de la cita(hh:mm Formato de 24 horas): ");
         String hora = sc.next();
         System.out.println("Ingrese nombre del cliente: ");
         String nameCliente = sc.next();

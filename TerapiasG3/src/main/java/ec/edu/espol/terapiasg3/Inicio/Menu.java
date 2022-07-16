@@ -1,23 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package ec.edu.espol.terapiasg3;
-
+package ec.edu.espol.terapiasg3.Inicio;
+import ec.edu.espol.terapiasg3.Agenda.Servicio;
+import ec.edu.espol.terapiasg3.Agenda.Cita;
+import ec.edu.espol.terapiasg3.Personas.Cliente;
+import ec.edu.espol.terapiasg3.Personas.Empleado;
 import java.util.Scanner;
 
-/**
- *
- *
- */
 public class Menu {
     public static void menuPrincipal(){
+        //Gargamos objetos con metodo InicializarSistema
         TodoLista t = new TodoLista();
         TodoLista.inicializarSistema(t);
         
         
         Scanner entrada = new Scanner(System.in);
         entrada.useDelimiter("\n");
+        
         char op = ' ';
         do{
             System.out.println("Menu de opciones:\r\n"+
@@ -27,6 +24,7 @@ public class Menu {
             System.out.println("Opcion:");
             op = entrada.next().charAt(0);
             switch(op){
+                //1. Servicios
                 case '1':
                     System.out.println("Estos son los servicios");
                     System.out.println(t.listServicio);
@@ -39,36 +37,28 @@ public class Menu {
                         opc = entrada.next().charAt(0);
                         switch(opc){
                             case '1':
-                                //Validar solo la parte si el usuario puede poner el estado activo o No
                                 System.out.println("Agregar Nuevo Servicio");
-                                Servicio nuevoServicio = Servicio.nextServicio(entrada);
-                               
-                                t.agregarServicios(nuevoServicio);
-                                System.out.println("Nuemero de elementos de lista Servicios: "+ t.listServicio.size());
+                                Servicio nuevoServicio = Servicio.nextServicio(entrada);                              
+                                t.agregarServicios(nuevoServicio);                                
                                 break;
 
 
                             case '2':
-                                //System.out.println(t.listServicio);
                                 System.out.println("Editar Servicio: ");
                                 System.out.println("Ingrese el nombre del Servicio: ");
                                 String nombServ = entrada.next();
                                 t.editarServicios(nombServ);
-                                //System.out.println(t.listServicio);
-
                                 break;
 
                             case '3':
-                                //System.out.println(t.listServicio);
                                 System.out.println("Eliminar Servicio: ");
                                 System.out.println("Ingrese el nombre del Servicio: ");
                                 String nombServone = entrada.next();
                                 t.eliminarServicios(nombServone);                                                            
-
                                 break;
-                            case '4':
-                                System.out.println("Se ha retirado de Servicios");
                                 
+                            case '4':
+                                System.out.println("Se ha retirado de Servicios");                               
                                 break;
 
                             default:
@@ -76,11 +66,10 @@ public class Menu {
                                 break;
 
                         }
-                    }while(opc != '4');
-                        
-                  
+                    }while(opc != '4');                                     
                     break;
               
+                //2. Empleados
                 case '2':
                     System.out.println("Estos son los empleados");
                     System.out.println(t.listEmpleado);
@@ -94,8 +83,7 @@ public class Menu {
                         switch(opc2){
                             case '1':
                                 System.out.println("Agregar Nuevo Empleado");
-                                Empleado nuevoEmpleado = Empleado.nextEmpleado(entrada);
-                               
+                                Empleado nuevoEmpleado = Empleado.nextEmpleado(entrada);                              
                                 t.agregarEmpleado(nuevoEmpleado);
                                 System.out.println("Numero de elementos de lista Empleados: "+ t.listEmpleado.size());
                                 
@@ -103,8 +91,7 @@ public class Menu {
                                 break;
 
                             case '2':
-                                System.out.println("Editar empleado: ");
-                                
+                                System.out.println("Editar empleado: ");                               
                                 System.out.println("Ingrese el nombre del Empleado: ");
                                 String nombEmp = entrada.next();
                                 t.editarEmpleado(nombEmp);
@@ -133,7 +120,8 @@ public class Menu {
                     }while(opc2!='4');
 
                     break;                
-                    
+                 
+                //3. Clientes
                 case '3':
                     System.out.println("Estos son los Clientes");
                     System.out.println(t.listCliente);
@@ -147,31 +135,22 @@ public class Menu {
                         switch(opc3){
                             case '1':
                                 System.out.println("Agregar Nuevo Cliente");
-                                Cliente nuevoCliente = Cliente.nextCliente(entrada);
-                               
+                                Cliente nuevoCliente = Cliente.nextCliente(entrada);                               
                                 t.agregarCliente(nuevoCliente);
-                                System.out.println("Numero de elementos de lista Clientes: "+ t.listCliente.size());
-                                
-
+                                System.out.println("Numero de elementos de lista Clientes: "+ t.listCliente.size());                               
                                 break;
 
                             case '2':
-                                //System.out.println(t.listServicio);
                                 System.out.println("Editar cliente: ");                               
                                 System.out.println("Ingrese el nombre del Cliente: ");
                                 String nombCliente = entrada.next();
-                                t.editarCliente(nombCliente);
-                                //System.out.println(t.listCliente);
-                                
-
+                                t.editarCliente(nombCliente);                                
                                 break;
 
                             case '3':
                                 System.out.println("Se ha retirado de Clientes");
-
                                 break;
                           
-
                             default:
                                 System.out.println("Opcion no valida...");
                                 break;
@@ -179,7 +158,8 @@ public class Menu {
                     }while(opc3!='3');
 
                     break;
-                    
+                 
+                //4. Citas
                 case '4':
                     char opc4= ' ';
                     do{
@@ -209,8 +189,7 @@ public class Menu {
                                 break;
                            
                             case '4':
-                                System.out.println("Se ha retirado de citas");
-                                
+                                System.out.println("Se ha retirado de citas");                              
                                 break;
 
                             default:
@@ -219,7 +198,8 @@ public class Menu {
                         }              
                     }while(opc4!='4');
                     break;
-                     
+                
+                //5. Atenciones
                 case '5':
                     char opc5= ' ';
                     do{
@@ -231,22 +211,16 @@ public class Menu {
                         switch(opc5){
                             case '1':
                                 System.out.println("Registrar atencion");
-                                t.registrarAtencion(entrada);
-                                
-                                
-                                
+                                t.registrarAtencion(entrada);                                
                                 break;
                                 
                             case '2':
                                 System.out.println("Consultar atencion");
-                                t.consultarAtencion(entrada);
-                               
-                                
+                                t.consultarAtencion(entrada);                              
                                 break;
                            
                             case '3':
-                                System.out.println("Se ha retirado de atenciones");
-                                
+                                System.out.println("Se ha retirado de atenciones");                               
                                 break;
 
                             default:
@@ -258,10 +232,9 @@ public class Menu {
                     
 
                     break;
-                    
+                //6. Salir 
                 case '6':
                     System.out.println("Gracias por su tiempo.");
-
                     break;
   
                 default:

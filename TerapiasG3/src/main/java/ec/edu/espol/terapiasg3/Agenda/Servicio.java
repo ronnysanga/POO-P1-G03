@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package ec.edu.espol.terapiasg3;
+package ec.edu.espol.terapiasg3.Agenda;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Michelle
- */
 public class Servicio {
     //atributos
     private String nombreServ ;
@@ -26,9 +18,6 @@ public class Servicio {
         this.estado = estado;
     }
 
-    Servicio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
     // getters & setters
     public String getNombreServ() {
         return nombreServ;
@@ -86,8 +75,8 @@ public class Servicio {
         }
         return estadoactual;
     }
-    //public Servicio(String nombreServ,int duracionAtencion,double precio,boolean estado)
     
+    //metodo para los inputs del usuario
     public static Servicio nextServicio(Scanner sc){ 
         System.out.println("Ingrese Nombre del Servicio: ");
         String nombreServ = sc.next();

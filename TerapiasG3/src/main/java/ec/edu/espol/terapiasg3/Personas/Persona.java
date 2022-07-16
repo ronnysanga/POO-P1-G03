@@ -1,20 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ec.edu.espol.terapiasg3;
+package ec.edu.espol.terapiasg3.Personas;
 
-/**
- *
- * @author dell
- */
+import java.util.Scanner;
+
 public class Persona {
     private String cedula;
     private String nombre;
     private String telefono;
     private String email;
 
+    //Contructor
     public Persona(String cedula, String nombre, String telefono, String email) {
         this.cedula = cedula;
         this.nombre = nombre;
@@ -22,6 +16,7 @@ public class Persona {
         this.email = email;
     }
 
+    //getters y setters
     public String getCedula() {
         return cedula;
     }
@@ -53,6 +48,23 @@ public class Persona {
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    //metodo para los inputs del usuario
+    public static Persona nextPersona(Scanner sc){ 
+        System.out.println("Ingrese Nombre: ");
+        String name = sc.next();
+        System.out.println("Ingrese cedula: ");
+        String cedula = sc.next();
+        System.out.println("Ingrese telefono: ");
+        String telefono = sc.next();
+        System.out.println("Ingrese email: ");
+        String email = sc.next();
+                
+        Persona newPerson = new Persona(cedula, name, telefono, email);
+        return newPerson; 
+    }
+    
+   
 
     @Override
     public String toString() {
