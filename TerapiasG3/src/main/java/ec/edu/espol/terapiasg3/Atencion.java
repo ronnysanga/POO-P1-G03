@@ -45,6 +45,11 @@ public class Atencion {
     public void setCita(Cita cita) {
         this.cita = cita;
     }
+
+    @Override
+    public String toString() {
+        return "Atencion{" + "duracion=" + duracion + ", empleadoA=" + empleadoA + ", cita=" + cita + '}';
+    }
     
     
     

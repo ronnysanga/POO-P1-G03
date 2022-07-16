@@ -231,7 +231,7 @@ public class Menu {
                         switch(opc5){
                             case '1':
                                 System.out.println("Registrar atencion");
-                                
+                                t.registrarAtencion(entrada);
                                 
                                 
                                 
@@ -239,6 +239,8 @@ public class Menu {
                                 
                             case '2':
                                 System.out.println("Consultar atencion");
+                                t.consultarAtencion(entrada);
+                               
                                 
                                 break;
                            

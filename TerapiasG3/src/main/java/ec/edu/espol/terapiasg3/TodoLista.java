@@ -258,8 +258,95 @@ public class TodoLista {
     
     //metodos de atencion
     
-    public void registrarAtencion(){
+    public void registrarAtencion(Scanner entrada){
+        System.out.println("Ingrese la cedula del cliente atendido: ");
+        String cedula=entrada.next();
+        Cita cita=buscarCita(entrada,cedula);
+        System.out.println("Ingrese la duracion de la atencion: ");
+        int duracion=entrada.nextInt();
+        entrada.nextLine();
         
+        System.out.println("Ingrese el nombre del empleado: ");
+        String nameEmpleado=entrada.next();
+        Empleado empl = buscarEmpleado(nameEmpleado);
+        
+        Atencion at= new Atencion(duracion,empl,cita);
+        listAtencion.add(at);
+        System.out.println("Se ha registrado la atencion "+at);
+    }
+    
+    public Cita buscarCita(Scanner entrada, String cedula){
+        Cita cita=null;
+        System.out.println("Ingrese la fecha: ");
+        String fecha=entrada.next();
+        System.out.println("Ingrese la hora: ");
+        String hora=entrada.next();
+        for (Cita c: listCita){
+            if(c.getCliente().getCedula().equals(cedula)){
+                
+                if((c.getFechaC().equals(fecha))&&(c.getHora().equals(hora))){
+                  cita=c;  
+                }else{
+                    System.out.println("No se encuentra la cita ");
+                }
+            }
+        }
+        return cita;
+    }
+    
+    public void consultarAtencion(Scanner entrada){
+        entrada.useDelimiter("\n");
+        char op = ' ';
+        do{
+            System.out.println("Seleccione el criterio de búsqueda:\r\n"+
+                    " 1. Cédula de cliente\r\n"+" 2. Cédula de empleado\r\n"+
+                    " 3. Fecha de atención\r\n"+" 4. Salir\r\n");
+            System.out.println("Opcion:");
+            op = entrada.next().charAt(0);
+            switch(op){
+                case '1':
+                    System.out.println("Ingrese la cedula de cliente: ");
+                    String cedula=entrada.next();
+                    for(Atencion at:listAtencion){
+                        if(at.getCita().getCliente().getCedula().equals(cedula)){
+                            System.out.println(at);
+                        }
+                    }
+                    
+                    
+                    break;
+                case '2':
+                    System.out.println("Ingrese la cedula de empleado: ");
+                    String cedulaE=entrada.next();
+                    for(Atencion at:listAtencion){
+                        if(at.getEmpleadoA().getCedula().equals(cedulaE)){
+                            System.out.println(at);
+                        }
+                    }
+                    
+                  
+                    break;
+                case '3':
+                    System.out.println("Ingrese la fecha de atención: ");
+                    String fecha=entrada.next();
+                    for(Atencion at:listAtencion){
+                        if(at.getCita().getFechaC().equals(fecha)){
+                            System.out.println(at);
+                        }
+                    }
+                    
+                    
+                    break;
+                case '4':
+                    System.out.println("Se ha retirado de consultar atención");
+                    break;
+                default:
+                    System.out.println("Opcion no valida...");
+                    break;
+            
+            }
+        }
+        while(op!='4');
     }
     
     
