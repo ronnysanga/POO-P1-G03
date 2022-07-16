@@ -55,6 +55,7 @@ public class Cita {
     
     //metodo para los inputs del usuario
     public static Cita nextCita(Scanner sc,TodoLista t){ 
+        Cita nuevaCita = null;
         System.out.println("Ingrese fecha de la cita(DD/MM/AAAA): ");
         String fechaC = sc.next();
         System.out.println("Ingrese hora de la cita(hh:mm Formato de 24 horas): ");
@@ -64,14 +65,15 @@ public class Cita {
         System.out.println("Ingrese nombre del empleado: ");
         String nameEmpleado = sc.next();
         
-        Cliente client = t.buscarCliente(nameCliente);
-        
-        Empleado empl = t.buscarEmpleado(nameEmpleado);
-  
-        Cita nuevaCita = new Cita(fechaC, hora, client, empl);
-        
+        if ((t.buscarCliente(nameCliente)==null)||(t.buscarEmpleado(nameEmpleado)==null)){
+            System.out.println("El empleado o cliente ingresado no existe");
+        }else{
+            Cliente client = t.buscarCliente(nameCliente);
+            Empleado empl = t.buscarEmpleado(nameEmpleado);
+            nuevaCita = new Cita(fechaC, hora, client, empl);
+            return nuevaCita;
+        }
         return nuevaCita;
-        
        }         
 
     @Override

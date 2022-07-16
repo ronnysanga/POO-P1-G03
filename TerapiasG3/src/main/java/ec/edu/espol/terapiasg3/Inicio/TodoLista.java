@@ -30,7 +30,7 @@ public class TodoLista {
             if(s.getNombreServ().equals(nombServ)){
                 a = false;
                 //Nombre de Servicio
-                System.out.println("Nombre del Servicio: " + s.getNombreServ());
+                System.out.println("Nombre del Servicio a editar: " + s.getNombreServ());
                 System.out.println("Nuevo Nombre del Servicio: ");
                 String newserv = sc.nextLine();
                 s.setNombreServ(newserv);
@@ -47,32 +47,40 @@ public class TodoLista {
                 s.setPrecio(newprice);                  
             }       
         }
-        
         if(a){
             System.out.println("NO EXISTE EL SERVICIO BUSCADO");
         }
-        
     }
     
     public void eliminarServicios( String nombServ ){
+        boolean a = true;
         for (Servicio s: listServicio ){
             if(s.getNombreServ().equals(nombServ)){
+                a=false;
                 s.setEstado(false);
                 System.out.println("Se cambio a estado:");
                 System.out.println(Servicio.verEstadoServicios(s.isEstado()));
+            
             }
         }
-        
+        if (a){
+                System.out.println("No existe el servicio ingresado.");
+        }
     }
     
     //Método agregado #1
     //buscar empleado por nombre de empleado
     public Empleado buscarEmpleado (String nameEmpleado){
         Empleado e = null;
+        boolean a = true;
         for (Empleado emple: listEmpleado ){
             if(emple.getNombre().equals(nameEmpleado)){
-                e = emple;
+                a=false;
+                e=emple;
             }
+        }
+        if(a){
+            System.out.println("NO EXISTE EL EMPLEADO INGRESADO");
         }
         return e;
     }
@@ -118,24 +126,33 @@ public class TodoLista {
     
     
     public void eliminarEmpleado( String nameEmp ){
+        boolean a = true;
         for (Empleado e: listEmpleado){
             if(e.getNombre().equals(nameEmp)){
+                a = false;
                 e.setEstado(false);
                 System.out.println("Se cambio a estado:");
                 System.out.println(Empleado.verEstadoEmpleado(e.isEstado()));
             }
         }
-        
+        if(a){
+            System.out.println("NO EXISTE EL EMPLEADO INGRESADO");
+        }
     }
     
     //Metodo agregado #2
     //metodo buscar cliente por nombre de cliente
     public Cliente buscarCliente (String nameCliente){
         Cliente c = null;
+        boolean a = true;
         for (Cliente client: listCliente ){
             if(client.getNombre().equals(nameCliente)){
+                a=false;
                 c = client;
             }
+        }
+        if(a){
+            System.out.println("NO EXISTE EL CLIENTE INGRESADO");
         }
         return c;
     }
@@ -178,6 +195,73 @@ public class TodoLista {
         }
     }
     
+    
+    public void crearCita (Cita ci){
+        if (ci==null){
+            System.out.println("No se creó la cita");
+        }
+        else{
+            String empleado = ci.getEmpleadoC().getNombre();
+            String fecha = ci.getFechaC();
+            String hora = ci.getHora();
+            for (int i = 0; i < listCita.size(); i++){
+                Cita c = listCita.get(i);
+                if(c.getEmpleadoC().getNombre().equals(empleado)){
+                    if(ci.getEmpleadoC().isEstado()){
+                        if((c.getFechaC().equals(fecha)) && (c.getHora().equals(hora))){
+                            System.out.println("El empleado se encuenta ocupado en esa fecha y hora");
+                            i = listCita.size();
+                        }else{
+                            listCita.add(ci);
+                            System.out.println("Se creo la nueva cita: " + ci);
+
+                            i = listCita.size();
+                        }
+                    }else{
+                        System.out.println("El empleado se encuentra inactivo");
+                    }
+                }else{
+                    System.out.println("No se encuentra al empleado ingresado");
+                }
+            }   
+        }
+    }
+    
+ 
+    
+    
+    public void eliminarCita (Scanner sc, String Cedula){
+          
+        boolean a=true;
+        for (int i = 0; i < listCita.size(); i++){
+            Cita c = listCita.get(i);
+            if(c.getCliente().getCedula().equals(Cedula)){  
+                a=false;
+                //Imprime Citas del Cliente con su cedula
+                System.out.println(c);
+                System.out.println("Ingrese Fecha(DD/MM/AAAA) de la cita a eliminar: ");
+                String fec = sc.next();
+                System.out.println("Ingrese Hora(hh:mm Formato de 24 horas) de la cita a eliminar: ");
+                String hor = sc.next();  
+                
+                Cita cita = buscarCita(fec, hor);
+                
+                if(cita == null){
+                    System.out.println("NO SE ENCONTRARON CITAS EN LAS FECHA U HORA INGRESADAS");
+                    i=listCita.size();
+                }else{
+                    listCita.remove(cita);
+                    System.out.println("Se elimino la Cita de la fecha "+fec+ " y hora " + hor);
+                    i=listCita.size();
+                }
+            }
+        }
+        if (a){
+                System.out.println("NO SE ENCONTRARON CITAS CON ESTE CLIENTE");
+                
+        }
+    }
+    
     //Metodo agregado #3
     //metodo buscar cita con fecha y hora
     public Cita buscarCita (String fecha, String hora ){
@@ -192,100 +276,78 @@ public class TodoLista {
         return c;
     }
     
-   
-    public void crearCita (Cita ci){
-        String empleado = ci.getEmpleadoC().getNombre();
-        String fecha = ci.getFechaC();
-        String hora = ci.getHora();
-        for (int i = 0; i < listCita.size(); i++){
-            Cita c = listCita.get(i);
-            if(c.getEmpleadoC().getNombre().equals(empleado)){
-                if(ci.getEmpleadoC().isEstado()){
-                    if((c.getFechaC().equals(fecha)) && (c.getHora().equals(hora))){
-                        System.out.println("El empleado se encuenta ocupado en esa fecha y hora");
-                        i = listCita.size();
-                    }else{
-                        listCita.add(ci);
-                        System.out.println("Se creo la nueva cita: " + ci);
-
-                        i = listCita.size();
-                    }
-                }else{
-                    System.out.println("El empleado se encuentra inactivo");
-                }
-            }else{
-                System.out.println("No se encuentra al empleado ingresado");
-            }
-        }    
-    }
-    
- 
-    
-    
-    public void eliminarCita (Scanner sc, String Cedula){
-        //Imprime Citas del Cliente con su cedula              
-        for (Cita c: listCita){
-            if(c.getCliente().getCedula().equals(Cedula)){             
-                System.out.println(c);              
-            }
-        }
-        
-        System.out.println("Ingrese Fecha(DD/MM/AAAA) de la cita a eliminar: ");
-        String fec = sc.next();
-        System.out.println("Ingrese Hora(hh:mm Formato de 24 horas) de la cita a eliminar: ");
-        String hor = sc.next();  
-        listCita.remove(buscarCita(fec, hor));       
-        System.out.println("Se elimino la Cita de la fecha "+fec+ " y hora " + hor);
-        
-    }
-    
     //BuscarCita por fecha
     public void buscarCitaPorFecha (String fecha ){
-        System.out.println("Aqui estan las citas de la fecha ingresada:");
+        boolean a = true;
+        System.out.println("Aqui están las citas encontradas:");
         for (Cita cit: listCita ){
             if(cit.getFechaC().equals(fecha)){
+                a=false;
                 System.out.println(cit);   
             }
+        }
+        if (a){
+            System.out.println("NO SE ENCONTRARON CITAS EN ESTA FECHA");
         }
 
     }
     
    
     public void registrarAtencion(Scanner entrada){
+        
         System.out.println("Ingrese la cedula del cliente atendido: ");
         String cedula=entrada.next();
         Cita cita=buscarCita(entrada,cedula);
-        System.out.println("Ingrese la duracion de la atencion: ");
-        int duracion=entrada.nextInt();
-        entrada.nextLine();
-        
-        System.out.println("Ingrese el nombre del empleado: ");
-        String nameEmpleado=entrada.next();
-        Empleado empl = buscarEmpleado(nameEmpleado);
-        
-        Atencion at= new Atencion(duracion,empl,cita);
-        listAtencion.add(at);
-        System.out.println("Se ha registrado la atencion "+at);
+
+        if (cita == null){
+            System.out.println("No se registró la atención");
+        }else{
+            System.out.println("Ingrese la duracion de la atencion: ");
+            int duracion=entrada.nextInt();
+            entrada.nextLine();
+
+            System.out.println("Ingrese el nombre del empleado: ");
+            String nameEmpleado=entrada.next();
+            Empleado empl = buscarEmpleado(nameEmpleado);
+            if(empl==null){
+                System.out.println("No se registró la atención");
+            }else{
+                Atencion at= new Atencion(duracion,empl,cita);
+                listAtencion.add(at);
+                System.out.println("Se ha registrado la atencion "+at);
+            }
+
+            
+        }
     }
-    
+  
     
     //Metodo agregado #4
     //buscar cita por cedula
     public Cita buscarCita(Scanner entrada, String cedula){
         Cita cita=null;
-        System.out.println("Ingrese la fecha(DD/MM/AAAA): ");
-        String fecha=entrada.next();
-        System.out.println("Ingrese la hora(hh:mm Formato de 24 horas): ");
-        String hora=entrada.next();
-        for (Cita c: listCita){
+        boolean a = true;
+        
+        for (int i = 0; i < listCita.size(); i++){
+            Cita c = listCita.get(i);
             if(c.getCliente().getCedula().equals(cedula)){
-                
+                a=false;
+                System.out.println("Ingrese la fecha(DD/MM/AAAA): ");
+                String fecha=entrada.next();
+                System.out.println("Ingrese la hora(hh:mm Formato de 24 horas): ");
+                String hora=entrada.next();
                 if((c.getFechaC().equals(fecha))&&(c.getHora().equals(hora))){
-                  cita=c;  
+                  cita=c;
+                  i=listCita.size();
                 }else{
-                    System.out.println("No se encuentra la cita ");
+                    System.out.println("No se encuentra la cita con la fecha y horas ingresadas ");
+                    i=listCita.size();
+                    
                 }
             }
+        }
+        if (a){
+            System.out.println("No se encuentra la cita con la cédula ingresada");
         }
         return cita;
     }
@@ -303,10 +365,15 @@ public class TodoLista {
                 case '1':
                     System.out.println("Ingrese la cedula de cliente: ");
                     String cedula=entrada.next();
+                    boolean a = true;
                     for(Atencion at:listAtencion){
                         if(at.getCita().getCliente().getCedula().equals(cedula)){
+                            a=false;
                             System.out.println(at);
                         }
+                    }
+                    if(a){
+                        System.out.println("No se encontraron atenciones con la cedula ingresada");
                     }
                     
                     
@@ -314,10 +381,14 @@ public class TodoLista {
                 case '2':
                     System.out.println("Ingrese la cedula de empleado: ");
                     String cedulaE=entrada.next();
+                    boolean b = true;
                     for(Atencion at:listAtencion){
                         if(at.getEmpleadoA().getCedula().equals(cedulaE)){
+                            b=false;
                             System.out.println(at);
                         }
+                    }if(b){
+                        System.out.println("No se encontraron atenciones con la cedula ingresada");
                     }
                     
                   
@@ -325,12 +396,16 @@ public class TodoLista {
                 case '3':
                     System.out.println("Ingrese la fecha(DD/MM/AAAA) de atención: ");
                     String fecha=entrada.next();
+                    boolean c = true;
                     for(Atencion at:listAtencion){
                         if(at.getCita().getFechaC().equals(fecha)){
+                            c=false;
                             System.out.println(at);
                         }
                     }
-                    
+                    if(c){
+                        System.out.println("No se encontraron atenciones con la fecha ingresada");
+                    }
                     
                     break;
                 case '4':

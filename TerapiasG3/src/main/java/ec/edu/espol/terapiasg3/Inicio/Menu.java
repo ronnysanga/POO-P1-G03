@@ -39,22 +39,25 @@ public class Menu {
                             case '1':
                                 System.out.println("Agregar Nuevo Servicio");
                                 Servicio nuevoServicio = Servicio.nextServicio(entrada);                              
-                                t.agregarServicios(nuevoServicio);                                
+                                t.agregarServicios(nuevoServicio);
+                                System.out.println(t.listServicio);
                                 break;
 
 
                             case '2':
                                 System.out.println("Editar Servicio: ");
-                                System.out.println("Ingrese el nombre del Servicio: ");
+                                System.out.println("Ingrese el nombre del Servicio a editar: ");
                                 String nombServ = entrada.next();
                                 t.editarServicios(nombServ);
+                                System.out.println(t.listServicio);
                                 break;
 
                             case '3':
                                 System.out.println("Eliminar Servicio: ");
-                                System.out.println("Ingrese el nombre del Servicio: ");
-                                String nombServone = entrada.next();
-                                t.eliminarServicios(nombServone);                                                            
+                                System.out.println("Ingrese el nombre del Servicio a eliminar: ");
+                                String nombServOne = entrada.next();
+                                t.eliminarServicios(nombServOne); 
+                                System.out.println(t.listServicio);
                                 break;
                                 
                             case '4':
@@ -85,32 +88,26 @@ public class Menu {
                                 System.out.println("Agregar Nuevo Empleado");
                                 Empleado nuevoEmpleado = Empleado.nextEmpleado(entrada);                              
                                 t.agregarEmpleado(nuevoEmpleado);
-                                System.out.println("Numero de elementos de lista Empleados: "+ t.listEmpleado.size());
-                                
-
+                                System.out.println(t.listEmpleado);
                                 break;
 
                             case '2':
                                 System.out.println("Editar empleado: ");                               
-                                System.out.println("Ingrese el nombre del Empleado: ");
+                                System.out.println("Ingrese el nombre del Empleado a editar: ");
                                 String nombEmp = entrada.next();
                                 t.editarEmpleado(nombEmp);
                                 System.out.println(t.listEmpleado);
-
                                 break;
 
                             case '3':
                                 System.out.println("Eliminar empleado: ");
-                                System.out.println("Ingrese el nombre del Empleado: ");
+                                System.out.println("Ingrese el nombre del Empleado a eliminar: ");
                                 String nombEmpl = entrada.next();
                                 t.eliminarEmpleado(nombEmpl); 
                                 System.out.println(t.listEmpleado);
-                                
-
                                 break;
                             case '4':
                                 System.out.println("Se ha retirado de Empleados");
-                                
                                 break;
 
                             default:
@@ -137,14 +134,15 @@ public class Menu {
                                 System.out.println("Agregar Nuevo Cliente");
                                 Cliente nuevoCliente = Cliente.nextCliente(entrada);                               
                                 t.agregarCliente(nuevoCliente);
-                                System.out.println("Numero de elementos de lista Clientes: "+ t.listCliente.size());                               
+                                System.out.println(t.listCliente);
                                 break;
 
                             case '2':
                                 System.out.println("Editar cliente: ");                               
-                                System.out.println("Ingrese el nombre del Cliente: ");
+                                System.out.println("Ingrese el nombre del Cliente a editar: ");
                                 String nombCliente = entrada.next();
-                                t.editarCliente(nombCliente);                                
+                                t.editarCliente(nombCliente);
+                                System.out.println(t.listCliente);
                                 break;
 
                             case '3':
@@ -163,6 +161,7 @@ public class Menu {
                 case '4':
                     char opc4= ' ';
                     do{
+                        
                         System.out.println("Menu de opciones:\r\n"+
                                 " 1. Crear Cita\r\n"+" 2. Eliminar Cita\r\n"+
                                 " 3. Consultar cita por fechas\r\n" + " 4. Salir");
@@ -173,9 +172,11 @@ public class Menu {
                                 System.out.println("Crear Cita");
                                 Cita nuevaCita = Cita.nextCita(entrada,t);
                                 t.crearCita(nuevaCita);
+                                
                                 break;
                             case '2':
                                 System.out.println("Eliminar Cita");
+                                
                                 System.out.println("Ingrese la cedula del cliente: ");
                                 String cedula = entrada.next();
                                 t.eliminarCita(entrada, cedula);
@@ -183,7 +184,7 @@ public class Menu {
                             
                             case '3':
                                 System.out.println("Consultar cita por fechas");
-                                System.out.println("Ingrese la fecha de la cita");
+                                System.out.println("Ingrese la fecha de la cita (DD/MM/AAAA):");
                                 String fecha = entrada.next();
                                 t.buscarCitaPorFecha(fecha);
                                 break;
@@ -211,6 +212,7 @@ public class Menu {
                         switch(opc5){
                             case '1':
                                 System.out.println("Registrar atencion");
+                                System.out.println(t.listCita);
                                 t.registrarAtencion(entrada);                                
                                 break;
                                 
