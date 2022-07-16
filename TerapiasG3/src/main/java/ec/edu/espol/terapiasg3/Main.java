@@ -2,10 +2,6 @@ package ec.edu.espol.terapiasg3;
 
 import ec.edu.espol.terapiasg3.Inicio.Menu;
 
-/**
- *
- * 
- */
 public class Main {
    
     public static void main(String[] args) {
