@@ -73,8 +73,8 @@ public class TodoLista {
         
     }
     
-    
-    //buscar empleado
+    //Método agregado #1
+    //buscar empleado por nombre de empleado
     public Empleado buscarEmpleado (String nameEmpleado){
         Empleado e = null;
         for (Empleado emple: listEmpleado ){
@@ -136,8 +136,8 @@ public class TodoLista {
         
     }
     
-    
-    //metodo buscar cliente
+    //Metodo agregado #2
+    //metodo buscar cliente por nombre de cliente
     public Cliente buscarCliente (String nameCliente){
         Cliente c = null;
         for (Cliente client: listCliente ){
@@ -185,6 +185,8 @@ public class TodoLista {
             System.out.println("NO EXISTE EL CLIENTE BUSCADO");
         }
     }
+    
+    //Metodo agregado #3
     //metodo buscar cita con fecha y hora
     public Cita buscarCita (String fecha, String hora ){
         Cita c = null;
@@ -256,8 +258,7 @@ public class TodoLista {
 
     }
     
-    //metodos de atencion
-    
+   
     public void registrarAtencion(Scanner entrada){
         System.out.println("Ingrese la cedula del cliente atendido: ");
         String cedula=entrada.next();
@@ -275,6 +276,9 @@ public class TodoLista {
         System.out.println("Se ha registrado la atencion "+at);
     }
     
+    
+    //Metodo agregado #4
+    //buscar cita por cedula
     public Cita buscarCita(Scanner entrada, String cedula){
         Cita cita=null;
         System.out.println("Ingrese la fecha: ");
