@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.juegocuantoshay.PrimaryController">
+   <children>
+      <Label alignment="CENTER" text="JUGUEMOS A CONTAR" />
+      <Label text="¿CUÁNTOS HAY?" />
+      <Label text="¿CUÁNTOS EJERCICIOS VA A REALIZAR?" />
+      <TextField fx:id="txtEjercicios" onAction="#onButtonClicked" onKeyReleased="#handleKeyReleased" />
+      <Button fx:id="btContinuar" mnemonicParsing="false" onAction="#onButtonClicked" text="CONTINUAR" />
+   </children>
+</VBox>
