@@ -10,7 +10,7 @@
       <Label alignment="CENTER" text="JUGUEMOS A CONTAR" />
       <Label text="¿CUÁNTOS HAY?" />
       <Label text="¿CUÁNTOS EJERCICIOS VA A REALIZAR?" />
-      <TextField fx:id="txtEjercicios" onAction="#onButtonClicked" onKeyReleased="#handleKeyReleased" />
-      <Button fx:id="btContinuar" mnemonicParsing="false" onAction="#onButtonClicked" text="CONTINUAR" />
+      <TextField fx:id="txtEjercicios" onAction="#abrirJuego" onKeyReleased="#handleKeyReleased" />
+      <Button fx:id="btContinuar" mnemonicParsing="false" onAction="#abrirJuego" text="CONTINUAR" />
    </children>
 </VBox>
