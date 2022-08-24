@@ -20,12 +20,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 import java.io.File;
 import modelo.Animal;
 
 
-public class Juego1Controller implements Initializable {
+public class Juego3Controller implements Initializable {
 
+    
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -45,20 +47,20 @@ public class Juego1Controller implements Initializable {
     private Button btAceptar;
     @FXML
     private VBox vbox;
-    int cantidad = 4;
+    int cantidad = 2;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // TODO
         generarAnimales();
         btAceptar.setDisable(true);
-
-        
     }    
+    
     
     public void generarAnimales(){
         
         for(int i=0;i<cantidad;i++){
-            Image image = new Image("files/pig.png",true);
+            Image image = new Image("files/hen.png",true);
             ImageView imgAnimal = new ImageView(image);
             imgAnimal.setFitHeight(100);
             imgAnimal.setFitWidth(100);
@@ -68,7 +70,7 @@ public class Juego1Controller implements Initializable {
     }
     
     public void pasarSiguienteReto(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("juego2.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("juego4.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -76,27 +78,24 @@ public class Juego1Controller implements Initializable {
     }
     
     public void pasarRetoAnterior(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("juego2.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     
-    //TERMINAR ESTO
+    
     public void ganarPerder(ActionEvent event) throws IOException {
         String numIngresado = txtCantidad.getText();
         if(Integer.valueOf(numIngresado) == cantidad){
             //si acierta
-//            App.mostrarAlerta(Alert.AlertType.CONFIRMATION, "Acertado");
             Image image = new Image("files/happy-face.png",true);
             imgAcierto = new ImageView(image);
             imgAcierto.setFitHeight(100);
             imgAcierto.setFitWidth(100);
             vbox.getChildren().add(imgAcierto);
-            
-            
-            
+   
         }else{
             // no acierta
             Image image = new Image("files/sad-face.png",true);
@@ -105,13 +104,8 @@ public class Juego1Controller implements Initializable {
             imgAcierto.setFitWidth(100);
             vbox.getChildren().add(imgAcierto);
         }
-        
-   
+
     }
-    
-    
-    
-    
     
     @FXML
     public void handleKeyReleased() {
@@ -122,5 +116,4 @@ public class Juego1Controller implements Initializable {
     }
     
     
-
 }

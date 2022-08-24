@@ -1,4 +1,3 @@
-
 package com.mycompany.juegocuantoshay;
 
 import java.io.IOException;
@@ -24,7 +23,7 @@ import java.io.File;
 import modelo.Animal;
 
 
-public class Juego1Controller implements Initializable {
+public class Juego5Controller implements Initializable {
 
     private Stage stage;
     private Scene scene;
@@ -45,7 +44,7 @@ public class Juego1Controller implements Initializable {
     private Button btAceptar;
     @FXML
     private VBox vbox;
-    int cantidad = 4;
+    int cantidad = 5;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -68,7 +67,7 @@ public class Juego1Controller implements Initializable {
     }
     
     public void pasarSiguienteReto(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("juego2.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("juego6.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -76,7 +75,7 @@ public class Juego1Controller implements Initializable {
     }
     
     public void pasarRetoAnterior(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("juego4.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
