@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import javafx.scene.control.Alert;
 import modelo.Animal;
 
 /**
@@ -38,7 +39,14 @@ public class App extends Application {
         
     }
 
-    
+    public static void mostrarAlerta(Alert.AlertType tipo, String mensaje) {
+        Alert alert = new Alert(tipo);
+
+        alert.setTitle("Resultado de operacion");
+        alert.setHeaderText("Notificacion");
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
     
     
 }

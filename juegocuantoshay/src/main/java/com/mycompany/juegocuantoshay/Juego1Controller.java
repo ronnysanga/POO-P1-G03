@@ -89,19 +89,28 @@ public class Juego1Controller implements Initializable {
     
     //TERMINAR ESTO
     public void ganarPerder(){
-        while(txtNumIngresado != null){
-            if(Integer.valueOf(txtNumIngresado.getText()) == cantidad){
-                    //si acierta
-                    Image image = new Image("files/happy-face.png",true);
-                    imgAcierto = new ImageView(image);
-                    imgAnimal.setFitHeight(100);
-                    imgAnimal.setFitWidth(100);
-
-                }else{
-                    //si no acierta
-                }
-        }
+        
+        
+        
+        
+//        if(txtNumIngresado != null){
+//            if(Integer.valueOf(txtNumIngresado.getText()) == cantidad){
+//                    //si acierta
+//                    Image image = new Image("files/happy-face.png",true);
+//                    imgAcierto = new ImageView(image);
+//                    imgAcierto.setFitHeight(100);
+//                    imgAcierto.setFitWidth(100);
+//
+//                }else{
+//                    //si no acierta
+//                    
+//                }
+//        
+//        }
     }
+    
+    
+    
     
     public void contarRetos(){
         

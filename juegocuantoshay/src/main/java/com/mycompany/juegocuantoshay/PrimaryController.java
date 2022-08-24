@@ -54,7 +54,7 @@ public class PrimaryController implements Initializable {
         
     }
         
-    
+    //valida que el usuario no pued avanzar sin ingresar un numero
     @FXML
     public void handleKeyReleased() {
         String texto = txtEjercicios.getText();

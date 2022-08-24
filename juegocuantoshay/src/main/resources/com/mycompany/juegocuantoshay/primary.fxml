@@ -28,9 +28,6 @@
             <Font name="Comic Sans MS" size="19.0" />
          </font></Label>
       <TextField fx:id="txtEjercicios" onAction="#abrirJuego" onKeyReleased="#handleKeyReleased" prefHeight="39.0" prefWidth="400.0">
-         <padding>
-            <Insets left="100.0" right="100.0" />
-         </padding>
          <VBox.margin>
             <Insets left="100.0" right="100.0" />
          </VBox.margin></TextField>
