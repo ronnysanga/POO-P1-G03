@@ -27,6 +27,7 @@ import javafx.stage.Stage;
  */
 public class PrimaryController implements Initializable {
 
+    
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -43,6 +44,7 @@ public class PrimaryController implements Initializable {
         btContinuar.setDisable(true);
     }    
     
+    
     @FXML
     private void abrirJuego(ActionEvent event) throws IOException {
 
@@ -51,6 +53,9 @@ public class PrimaryController implements Initializable {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+            App.start = System.currentTimeMillis();
+            
+            
         
     }
         

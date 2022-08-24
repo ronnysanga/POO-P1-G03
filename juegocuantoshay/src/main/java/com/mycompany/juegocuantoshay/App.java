@@ -18,6 +18,8 @@ public class App extends Application {
 
     private static Scene scene;
     public static ArrayList<Animal> animales;
+    static long start;
+    static long finish;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -48,5 +50,6 @@ public class App extends Application {
         alert.showAndWait();
     }
     
+   
     
 }

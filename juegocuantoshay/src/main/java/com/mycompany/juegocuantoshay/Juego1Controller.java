@@ -15,12 +15,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.io.File;
 import modelo.Animal;
 
 /**
@@ -39,7 +43,7 @@ public class Juego1Controller implements Initializable {
     private Scene scene;
     private Parent root;
     @FXML
-    private TextField txtNumIngresado;
+    private TextField txtCantidad;
     @FXML
     private Button btSiguiente;
     @FXML
@@ -50,12 +54,17 @@ public class Juego1Controller implements Initializable {
     private FlowPane flowPane;
     @FXML
     private ImageView imgAcierto;
+    @FXML
+    private Button btAceptar;
+    @FXML
+    private VBox vbox;
     int cantidad = 4;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         generarAnimales();
-        ganarPerder();
+        btAceptar.setDisable(true);
+
         
     }    
     
@@ -88,28 +97,42 @@ public class Juego1Controller implements Initializable {
     }
     
     //TERMINAR ESTO
-    public void ganarPerder(){
+    public void ganarPerder(ActionEvent event) throws IOException {
+        String numIngresado = txtCantidad.getText();
+        if(Integer.valueOf(numIngresado) == cantidad){
+            //si acierta
+//            App.mostrarAlerta(Alert.AlertType.CONFIRMATION, "Acertado");
+            Image image = new Image("files/happy-face.png",true);
+            imgAcierto = new ImageView(image);
+            imgAcierto.setFitHeight(100);
+            imgAcierto.setFitWidth(100);
+            vbox.getChildren().add(imgAcierto);
+            
+            
+            
+        }else{
+            // no acierta
+            Image image = new Image("files/sad-face.png",true);
+            imgAcierto = new ImageView(image);
+            imgAcierto.setFitHeight(100);
+            imgAcierto.setFitWidth(100);
+            vbox.getChildren().add(imgAcierto);
+        }
         
-        
-        
-        
-//        if(txtNumIngresado != null){
-//            if(Integer.valueOf(txtNumIngresado.getText()) == cantidad){
-//                    //si acierta
-//                    Image image = new Image("files/happy-face.png",true);
-//                    imgAcierto = new ImageView(image);
-//                    imgAcierto.setFitHeight(100);
-//                    imgAcierto.setFitWidth(100);
-//
-//                }else{
-//                    //si no acierta
-//                    
-//                }
-//        
-//        }
+   
     }
     
     
+    
+    
+    
+    @FXML
+    public void handleKeyReleased() {
+        String texto = txtCantidad.getText();
+        boolean deshabilitar = texto.isEmpty() || texto.trim().isEmpty();
+        btAceptar.setDisable(deshabilitar);
+        
+    }
     
     
     public void contarRetos(){
