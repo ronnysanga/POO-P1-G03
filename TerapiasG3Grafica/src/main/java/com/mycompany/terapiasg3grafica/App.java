@@ -1,5 +1,5 @@
 
-package terapiagraficag3;
+package com.mycompany.terapiasg3grafica;
 
 import java.io.IOException;
 import javafx.application.Application;
@@ -10,7 +10,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class TerapiaGraficaG3 extends Application{
+public class App extends Application{
 
     private static Scene scene;
     static long start;
@@ -43,23 +43,3 @@ public class TerapiaGraficaG3 extends Application{
         
     
 }
-
-    /*
-    public static void main(String[] args) {
-        launch(args);
-
-    }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-        Scene scene = new Scene(root);
-        stage.setTitle("Bienvenidos a Terapias MEDICAL");
-        stage.setScene(scene);
-        stage.show();        
-        
-    }*/
-        
-        
-
-    
