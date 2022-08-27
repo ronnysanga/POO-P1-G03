@@ -32,6 +32,8 @@ public class MenuController implements Initializable {
     private Parent root;
     @FXML
     private Button btServicios;
+    @FXML
+    private Button btClientes;
     /**
      * Initializes the controller class.
      */
@@ -50,11 +52,17 @@ public class MenuController implements Initializable {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-            App.start = System.currentTimeMillis();
-            
-            
-        
+            App.start = System.currentTimeMillis();        
     }
-        
-    
+      
+    @FXML
+    private void abrirClientes(ActionEvent event) throws IOException {
+
+            Parent root = FXMLLoader.load(getClass().getResource("Clientes.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            App.start = System.currentTimeMillis();
+    }
 }
