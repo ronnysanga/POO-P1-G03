@@ -25,7 +25,7 @@
             <TableColumn prefWidth="75.0" text="Estado" />
         </columns>
       </TableView>
-      <Button layoutX="69.0" layoutY="335.0" mnemonicParsing="false" text="Agregar Servicios">
+      <Button layoutX="69.0" layoutY="335.0" mnemonicParsing="false" onAction="#agregarServicios" text="Agregar Servicios">
          <effect>
             <DropShadow />
          </effect>
@@ -38,7 +38,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button layoutX="455.0" layoutY="335.0" mnemonicParsing="false" text="Eliminar Servicio">
+      <Button layoutX="455.0" layoutY="335.0" mnemonicParsing="false" onAction="#eliminarServicios" text="Eliminar Servicio">
          <effect>
             <DropShadow />
          </effect>
