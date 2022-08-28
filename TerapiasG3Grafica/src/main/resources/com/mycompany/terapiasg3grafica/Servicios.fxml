@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="com.mycompany.terapiasg3grafica.ServiciosController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.terapiasg3grafica.ServiciosController">
    <children>
-      <Label layoutX="272.0" layoutY="33.0" prefHeight="17.0" prefWidth="56.0" text="Servicios" />
+      <Label layoutX="242.0" layoutY="30.0" prefHeight="29.0" prefWidth="122.0" text="Servicios">
+         <font>
+            <Font name="Cooper Black" size="25.0" />
+         </font></Label>
       <TableView layoutX="22.0" layoutY="78.0" prefHeight="200.0" prefWidth="556.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Nombre" />
@@ -26,5 +30,23 @@
             </DropShadow>
          </effect>
       </TableView>
+      <Button layoutX="69.0" layoutY="335.0" mnemonicParsing="false" text="Agregar Servicios">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="266.0" layoutY="335.0" mnemonicParsing="false" text="Editar Servicio">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button layoutX="455.0" layoutY="335.0" mnemonicParsing="false" text="Eliminar Servicio">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
    </children>
 </AnchorPane>
