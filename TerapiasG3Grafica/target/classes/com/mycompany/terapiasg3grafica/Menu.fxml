@@ -37,7 +37,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Empleados" textFill="WHITE">
+            <Button fx:id="btEmpleados" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Empleados" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -76,7 +76,7 @@
                   <Insets left="33.0" />
                </padding>
             </Button>
-            <Button alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Citas" textFill="WHITE">
+            <Button fx:id="btCitas" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Citas" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -94,7 +94,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Atenciones" textFill="WHITE">
+            <Button fx:id="btAtenciones" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Atenciones" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>

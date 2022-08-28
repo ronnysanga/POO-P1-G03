@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 
 public class App extends Application{
@@ -22,10 +24,13 @@ public class App extends Application{
             Parent root = FXMLLoader.load(this.getClass().getResource("Menu.fxml"));
             scene = new Scene(root);
 
-            stage.setTitle("JavaFX 2 menu");
-
+            stage.setTitle("EMPRESA DE SERVICIOS DE TERAPIAS");
+            //para los iconos
+            //stage.getIcons().add(new Image(""))
+                    
             stage.setScene(scene);
             stage.show();
+            
         }catch(Exception e){
             e.printStackTrace();
         }
