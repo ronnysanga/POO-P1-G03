@@ -32,7 +32,7 @@
                <graphic>
                   <ImageView fitHeight="22.0" fitWidth="22.0" translateX="-40.0">
                      <image>
-                        <Image url="@../../../../../../../../../Downloads/icons8-servicio-50.png" />
+                        <Image url="@../../../Imagenes/IconServicios.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -47,7 +47,7 @@
                <graphic>
                   <ImageView fitHeight="22.0" fitWidth="22.0" translateX="-48.0">
                      <image>
-                        <Image url="@../../../../../../../../../Downloads/icons8-tarjeta-de-empleado-50.png" />
+                        <Image url="@../../../Imagenes/IconoEmpleados.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -62,7 +62,7 @@
                <graphic>
                   <ImageView fitHeight="22.0" fitWidth="22.0" translateX="-39.0">
                      <image>
-                        <Image url="@../../../../../../../../../Downloads/icons8-grupo-de-usuarios-hombre-hombre-64.png" />
+                        <Image url="@../../../Imagenes/IconClientes.png" />
                      </image>
                      <viewport>
                         <Rectangle2D />
@@ -89,7 +89,7 @@
                <graphic>
                   <ImageView fitHeight="22.0" fitWidth="22.0" translateX="-31.0">
                      <image>
-                        <Image url="@../../../../../../../../../Downloads/icons8-calendario-personal-48.png" />
+                        <Image url="@../../../Imagenes/IconCitas.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -104,7 +104,7 @@
                <graphic>
                   <ImageView fitHeight="22.0" fitWidth="22.0" translateX="-48.0">
                      <image>
-                        <Image url="@../../../../../../../../../Downloads/icons8-tiempo-de-reunión-24.png" />
+                        <Image url="@../../../Imagenes/IconAtenciones.png" />
                      </image>
                   </ImageView>
                </graphic>
