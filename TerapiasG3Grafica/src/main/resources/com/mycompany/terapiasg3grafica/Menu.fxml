@@ -12,7 +12,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="725.0" style="-fx-background-color: #E8F9FD;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.terapiasg3grafica.MenuController">
    <children>
-      <VBox prefHeight="454.0" prefWidth="155.0" style="-fx-background-color: #1B2430;">
+      <ImageView fitHeight="454.0" fitWidth="660.0" layoutX="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagenes/Home.png" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="454.0" prefWidth="98.0" style="-fx-background-color: #1B2430;">
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Menú" translateX="25.0" wrappingWidth="147.13671875">
                <font>
@@ -22,7 +27,7 @@
                   <Insets right="-7.0" />
                </VBox.margin>
             </Text>
-            <Button fx:id="btServicios" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#abrirServicios" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Servicios" textFill="WHITE">
+            <Button fx:id="btServicios" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#abrirServicios" prefHeight="32.0" prefWidth="102.0" style="-fx-background-color: #1B2430;" text="Servicios" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -37,7 +42,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btEmpleados" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#abrirEmpleados" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Empleados" textFill="WHITE">
+            <Button fx:id="btEmpleados" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#abrirEmpleados" prefHeight="32.0" prefWidth="102.0" style="-fx-background-color: #1B2430;" text="Empleados" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -52,7 +57,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btClientes" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#abrirClientes" prefHeight="33.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Clientes" textFill="WHITE">
+            <Button fx:id="btClientes" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#abrirClientes" prefHeight="33.0" prefWidth="101.0" style="-fx-background-color: #1B2430;" text="Clientes" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -76,7 +81,7 @@
                   <Insets left="33.0" />
                </padding>
             </Button>
-            <Button fx:id="btCitas" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Citas" textFill="WHITE">
+            <Button fx:id="btCitas" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#abrirCitas" prefHeight="32.0" prefWidth="102.0" style="-fx-background-color: #1B2430;" text="Citas" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -94,7 +99,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btAtenciones" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Atenciones" textFill="WHITE">
+            <Button fx:id="btAtenciones" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: #1B2430;" text="Atenciones" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -110,6 +115,12 @@
                </graphic>
             </Button>
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets right="-20.0" />
+         </padding>
       </VBox>
    </children>
 </AnchorPane>

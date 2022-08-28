@@ -47,15 +47,6 @@ public class MenuController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //Botones habilitados
-        /*
-        btServicios.setDisable(false);
-        btClientes.setDisable(false);
-        btAtenciones.setDisable(false);
-        btCitas.setDisable(false);
-        btEmpleados.setDisable(false);*/
-        
-        
         
     }    
     
@@ -86,6 +77,17 @@ public class MenuController implements Initializable {
     private void abrirEmpleados(ActionEvent event) throws IOException {
 
             Parent root = FXMLLoader.load(getClass().getResource("Empleados.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            App.start = System.currentTimeMillis();
+    }
+    
+    @FXML
+    private void abrirCitas(ActionEvent event) throws IOException {
+
+            Parent root = FXMLLoader.load(getClass().getResource("Citas.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
