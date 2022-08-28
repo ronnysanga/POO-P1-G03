@@ -1,19 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="lbClientes" text="Label" />
-      <TableView fx:id="tvClientes" layoutY="47.0" prefHeight="200.0" prefWidth="200.0">
+      <Label fx:id="lbClientes" layoutX="245.0" layoutY="7.0" prefHeight="39.0" prefWidth="122.0" text="Clientes" textAlignment="RIGHT">
+         <font>
+            <Font name="Cooper Black" size="29.0" />
+         </font></Label>
+      <TableView fx:id="tvClientes" layoutX="18.0" layoutY="54.0" prefHeight="242.0" prefWidth="564.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn prefWidth="154.0" text="Datos del representante" />
+          <TableColumn prefWidth="66.0" text="Cedula" />
+            <TableColumn prefWidth="66.0" text="Nombre" />
+            <TableColumn prefWidth="75.0" text="Telefono" />
+            <TableColumn prefWidth="75.0" text="Email" />
         </columns>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.1703999936580658" green="0.2423466593027115" blue="0.7099999785423279" />
+               </color>
+            </DropShadow>
+         </effect>
       </TableView>
+      <Button layoutX="92.0" layoutY="341.0" mnemonicParsing="false" text="Agregar">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button layoutX="264.0" layoutY="341.0" mnemonicParsing="false" text="Editar">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="Sylfaen" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="431.0" layoutY="341.0" mnemonicParsing="false" text="Eliminar">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
