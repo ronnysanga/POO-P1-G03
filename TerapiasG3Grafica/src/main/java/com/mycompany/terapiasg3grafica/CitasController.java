@@ -33,7 +33,7 @@ public class CitasController implements Initializable{
     private Stage stage;
     private Scene scene;
     
-        @FXML
+    @FXML
     private AnchorPane anchorPane;
     @FXML
     private TableView tvCitas;
