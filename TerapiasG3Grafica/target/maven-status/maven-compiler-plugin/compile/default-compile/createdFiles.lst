@@ -1,3 +1,10 @@
+com\mycompany\terapiasg3grafica\ClientesController.class
+com\mycompany\terapiasg3grafica\EmpleadosController.class
 com\mycompany\terapiasg3grafica\MenuController.class
 com\mycompany\terapiasg3grafica\App.class
+modelo\Empleado.class
+com\mycompany\terapiasg3grafica\ServiciosController.class
 module-info.class
+modelo\Cliente.class
+modelo\Persona.class
+modelo\Servicios.class

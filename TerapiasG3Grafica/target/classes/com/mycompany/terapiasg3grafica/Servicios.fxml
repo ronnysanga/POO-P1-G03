@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.terapiasg3grafica.ServiciosController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1B2430;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.terapiasg3grafica.ServiciosController">
    <children>
-      <Label layoutX="242.0" layoutY="30.0" prefHeight="29.0" prefWidth="122.0" text="Servicios">
+      <Label fx:id="lbServicios" layoutX="242.0" layoutY="30.0" prefHeight="29.0" prefWidth="122.0" text="Servicios" textFill="#c8d8ff">
          <font>
             <Font name="Cooper Black" size="25.0" />
          </font></Label>
@@ -22,13 +24,6 @@
             <TableColumn prefWidth="75.0" text="Precio" />
             <TableColumn prefWidth="75.0" text="Estado" />
         </columns>
-         <effect>
-            <DropShadow>
-               <color>
-                  <Color red="0.19249999523162842" green="0.25850000977516174" blue="0.7699999809265137" />
-               </color>
-            </DropShadow>
-         </effect>
       </TableView>
       <Button layoutX="69.0" layoutY="335.0" mnemonicParsing="false" text="Agregar Servicios">
          <effect>
@@ -47,6 +42,21 @@
          <effect>
             <DropShadow />
          </effect>
+      </Button>
+      <Button fx:id="btAtras" layoutY="11.0" mnemonicParsing="false" onAction="#volverMenu" style="-fx-background-color: #1B2430;" text="Atras" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" translateX="3.0">
+               <image>
+                  <Image url="@../../../Imagenes/IconAtras.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="18.0" />
+         </font>
+         <padding>
+            <Insets left="14.0" />
+         </padding>
       </Button>
    </children>
 </AnchorPane>

@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label fx:id="lbClientes" layoutX="245.0" layoutY="7.0" prefHeight="39.0" prefWidth="122.0" text="Clientes" textAlignment="RIGHT">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1B2430;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.terapiasg3grafica.ClientesController">
+    <children>
+      <Label fx:id="lbClientes" layoutX="245.0" layoutY="7.0" prefHeight="39.0" prefWidth="122.0" text="Clientes" textAlignment="RIGHT" textFill="#dfb5ff">
          <font>
             <Font name="Cooper Black" size="29.0" />
          </font></Label>
@@ -24,16 +25,6 @@
             <TableColumn prefWidth="75.0" text="Telefono" />
             <TableColumn prefWidth="75.0" text="Email" />
         </columns>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-         <effect>
-            <DropShadow>
-               <color>
-                  <Color red="0.1703999936580658" green="0.2423466593027115" blue="0.7099999785423279" />
-               </color>
-            </DropShadow>
-         </effect>
       </TableView>
       <Button layoutX="92.0" layoutY="341.0" mnemonicParsing="false" text="Agregar">
          <font>
@@ -58,6 +49,20 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
+      </Button>
+      <Button fx:id="btAtras" layoutY="11.0" mnemonicParsing="false" onAction="#volverMenu" style="-fx-background-color: #1B2430;" text="Atras" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagenes/IconAtras.png" />
+               </image></ImageView>
+         </graphic>
+         <padding>
+            <Insets left="14.0" />
+         </padding>
       </Button>
    </children>
 </AnchorPane>

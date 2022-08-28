@@ -1,13 +1,14 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.mycompany.terapiasg3grafica;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,56 +19,47 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import modelo.Cliente;
-import modelo.Persona;
 
+import modelo.Empleado;
 
-
-
-
-public class ClientesController implements Initializable {
-    
+/**
+ *
+ * @author dell
+ */
+public class EmpleadosController {
     private Stage stage;
     private Scene scene;
 
     @FXML
     private AnchorPane anchorPane;
     @FXML
-    private TableView tvClientes;
+    private TableView tvEmpleados;
     @FXML
-    private TableColumn<Cliente,String> clNombre;
+    private TableColumn<Empleado,String> clEstado;
     @FXML
-    private TableColumn<Cliente,String> clCedula;
+    private TableColumn<Empleado,String> clNombre;
     @FXML
-    private TableColumn<Cliente,String> clDatoRepres;
+    private TableColumn<Empleado,String> clCedula;
     @FXML
-    private TableColumn<Cliente,String> clTelefono;
+    private TableColumn<Empleado,String> clDatoRepres;
+    @FXML
+    private TableColumn<Empleado,String> clTelefono;
      @FXML
-    private TableColumn<Cliente,String> clEmail;
+    private TableColumn<Empleado,String> clEmail;
     @FXML
-    private Label lbClientes;
+    private Label lbEmpleados;
     
     @FXML
     private Button btAtras;
-   
-    /**
-     * Initializes the controller class.
-     * @param url
-     * @param rb
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        cargarDatos();
-    }    
+    
     
     public void cargarDatos(){
-        lbClientes = new Label();
-        lbClientes.setText("Clientes");
+        lbEmpleados = new Label();
+        lbEmpleados.setText("Empleados");
         anchorPane = new AnchorPane();
-        tvClientes = new TableView();
-        clDatoRepres = new TableColumn<>("Datos de Representante");
-        clDatoRepres.setCellValueFactory(new PropertyValueFactory<>("DatoRepres"));
+        tvEmpleados = new TableView();
+        clEstado = new TableColumn<>("Estado");
+        clEstado.setCellValueFactory(new PropertyValueFactory<>("Estado"));
         clCedula = new TableColumn<>("Cedula");
         clCedula.setCellValueFactory(new PropertyValueFactory<>("Cedula"));
         clNombre = new TableColumn<>("Nombre");
@@ -77,18 +69,17 @@ public class ClientesController implements Initializable {
         clEmail = new TableColumn<>("Email");
         clEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
         
-        tvClientes.getColumns().add(clDatoRepres);
-        tvClientes.getColumns().add(clCedula);
-        tvClientes.getColumns().add(clNombre);
-        tvClientes.getColumns().add(clTelefono);
-        tvClientes.getColumns().add(clEmail);
+        tvEmpleados.getColumns().add(clEstado);
+        tvEmpleados.getColumns().add(clCedula);
+        tvEmpleados.getColumns().add(clNombre);
+        tvEmpleados.getColumns().add(clTelefono);
+        tvEmpleados.getColumns().add(clEmail);
         
-        tvClientes.getItems().add(new Cliente("Dato Representante 1", "099999999", "Daniela", "0988888888", "daniela@correo.com"));
-        anchorPane.getChildren().add(lbClientes);
-        anchorPane.getChildren().add(tvClientes);
+        tvEmpleados.getItems().add(new Empleado(true, "099999999", "Daniela", "0988888888", "daniela@correo.com"));
+        anchorPane.getChildren().add(lbEmpleados);
+        anchorPane.getChildren().add(tvEmpleados);
         
     }
-    
     
     @FXML
     private void volverMenu(ActionEvent event) throws IOException {
@@ -98,4 +89,5 @@ public class ClientesController implements Initializable {
         stage.setScene(scene);
         stage.show();     
     }
+    
 }

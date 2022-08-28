@@ -11,15 +11,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1B2430;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.terapiasg3grafica.ClientesController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1B2430;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.terapiasg3grafica.EmpleadosController">
     <children>
-      <Label fx:id="lbClientes" layoutX="245.0" layoutY="7.0" prefHeight="39.0" prefWidth="122.0" text="Clientes" textAlignment="RIGHT" textFill="#dfb5ff">
+      <Label fx:id="lbEmpleados" layoutX="205.0" layoutY="11.0" prefHeight="39.0" prefWidth="165.0" text="Empleados" textAlignment="RIGHT" textFill="#dfb5ff">
          <font>
             <Font name="Cooper Black" size="29.0" />
          </font></Label>
-      <TableView fx:id="tvClientes" layoutX="18.0" layoutY="54.0" prefHeight="242.0" prefWidth="564.0">
+      <TableView fx:id="tvEmpleados" layoutX="18.0" layoutY="54.0" prefHeight="242.0" prefWidth="564.0">
         <columns>
-          <TableColumn prefWidth="154.0" text="Datos del representante" />
+            <TableColumn prefWidth="75.0" text="Estado" />
           <TableColumn prefWidth="66.0" text="Cedula" />
             <TableColumn prefWidth="66.0" text="Nombre" />
             <TableColumn prefWidth="75.0" text="Telefono" />

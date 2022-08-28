@@ -37,7 +37,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btEmpleados" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Empleados" textFill="WHITE">
+            <Button fx:id="btEmpleados" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#abrirEmpleados" prefHeight="32.0" prefWidth="187.0" style="-fx-background-color: #1B2430;" text="Empleados" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>

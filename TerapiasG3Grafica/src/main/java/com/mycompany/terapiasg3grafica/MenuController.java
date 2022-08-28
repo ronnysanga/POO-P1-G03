@@ -82,4 +82,15 @@ public class MenuController implements Initializable {
             App.start = System.currentTimeMillis();
     }
     
+    @FXML
+    private void abrirEmpleados(ActionEvent event) throws IOException {
+
+            Parent root = FXMLLoader.load(getClass().getResource("Empleados.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            App.start = System.currentTimeMillis();
+    }
+    
 }
