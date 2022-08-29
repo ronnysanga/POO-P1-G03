@@ -5,11 +5,15 @@
  */
 package com.mycompany.terapiasg3grafica;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,10 +41,9 @@ public class ServiciosController implements Initializable {
     
     private Stage stage;
     private Scene scene;
+   
     @FXML
-    private AnchorPane anchorPane;
-    @FXML
-    private TableView tvServicios;
+    private TableView<Servicios> tvServicios;
     @FXML
     private TableColumn<Servicios,String> clNombre;
     @FXML
@@ -49,10 +52,6 @@ public class ServiciosController implements Initializable {
     private TableColumn<Servicios,String> clPrecio;
     @FXML
     private TableColumn<Servicios,String> clEstado;
-    
-   
-    
-    
     
     @FXML
     private Label lbServicios;
@@ -69,29 +68,51 @@ public class ServiciosController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        cargarDatos();
-    }
+        // TODO
+        clNombre.setCellValueFactory(new PropertyValueFactory<Servicios,String>("nombreServ"));
+        clDuracion.setCellValueFactory(new PropertyValueFactory<Servicios,String>("duracionAtencion"));
+        clPrecio.setCellValueFactory(new PropertyValueFactory<Servicios,String>("precio"));
+        
+        clEstado.setCellValueFactory(new PropertyValueFactory<Servicios,String>("estado"));
+        tvServicios.setItems(getServicios());
+        
+        
+    }    
     
-    public void cargarDatos(){
-        lbServicios = new Label();
-        lbServicios.setText("Servicios");
-        anchorPane = new AnchorPane();
-        tvServicios = new TableView();
-        clNombre = new TableColumn<>("Nombre");
-        clNombre.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
-        clDuracion = new TableColumn<>("Duracion");
-        clDuracion.setCellValueFactory(new PropertyValueFactory<>("Duracion"));
-        clPrecio = new TableColumn<>("Precio");
-        clPrecio.setCellValueFactory(new PropertyValueFactory<>("Precio"));
-        clEstado = new TableColumn<>("Estado");
-        clEstado.setCellValueFactory(new PropertyValueFactory<>("Estado"));
+    public static ArrayList<Servicios> obtenerServicios(String ruta){
+        ArrayList<Servicios> servicios = new ArrayList<>();
+        //completar para leer el archivo y llenar la lista
+        try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
+            String sCurrentLine;
+            while ((sCurrentLine = br.readLine()) != null) {
+                String[] datos = sCurrentLine.split(",");
+//                NombreServicio,Duracion,Precio,Estado
+                String nombreServicio = datos[0];
+                int duracion = Integer.valueOf(datos[1]);
+                double precio = Double.valueOf(datos[2]);
+                boolean estado = Boolean.valueOf(datos[3]);
+                Servicios s1 = new Servicios(nombreServicio,duracion,precio,estado);
+                servicios.add(s1);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return servicios;
+}
+    
+    
+    public ObservableList<Servicios> getServicios(){
+        ObservableList<Servicios> servicios = FXCollections.observableArrayList();
         
-        tvServicios.getColumns().add(clNombre);
-        tvServicios.getColumns().add(clDuracion);
-        tvServicios.getColumns().add(clPrecio);
-        tvServicios.getColumns().add(clEstado);
+        ArrayList<Servicios> lista_serv = obtenerServicios("serviciosv1.txt");
+        for(Servicios s: lista_serv){
+//            Servicios s1 = s;   
+//            servicios.add(new Servicios("Terapia de lenguaje",120,20.00,true));
+            servicios.add(new Servicios(s.getNombreServ(),s.getDuracionAtencion(),s.getPrecio(),s.isEstado()));
+        }
         
+        return servicios;
     }
         @FXML
         private void volverMenu(ActionEvent event) throws IOException {
@@ -102,26 +123,7 @@ public class ServiciosController implements Initializable {
             stage.show();     
         }
         
-        
-     /*   
-        @FXML
-        private void agregarServicios(ActionEvent event) {
-            System.out.println("agg");
-            String nombre = campoNombre.getText();
-            int duracion = Integer.parseInt(campoDuracion.getText());
-            double precio = Double.parseDouble(campoPrecio.getText());
-            String estado = comboBoxServicios.getValue();
-            servicios.add(new Servicio(nombre,duracion,precio,App.stringABoolean(estado)));
-            tablaServicios.getItems().setAll(servicios);
-            Servicio.sobreescribirFichero(servicios);
-            reestablecer(campoNombre,campoPrecio,campoDuracion,comboBoxServicios);
-    }
-    
-        
-        */
-        
-        
-        
+     
     }
     
 

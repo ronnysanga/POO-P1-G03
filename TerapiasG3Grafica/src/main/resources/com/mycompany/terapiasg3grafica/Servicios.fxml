@@ -12,44 +12,28 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1B2430;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.terapiasg3grafica.ServiciosController">
-   <children>
-      <Label fx:id="lbServicios" layoutX="242.0" layoutY="30.0" prefHeight="29.0" prefWidth="122.0" text="Servicios" textFill="#c8d8ff">
+    <children>
+      <Label fx:id="lbServicios" layoutX="212.0" layoutY="7.0" prefHeight="39.0" prefWidth="155.0" text="Servicios" textAlignment="RIGHT" textFill="#dfb5ff">
          <font>
-            <Font name="Cooper Black" size="25.0" />
+            <Font name="Cooper Black" size="29.0" />
          </font></Label>
-      <TableView fx:id="tvServicios" layoutX="22.0" layoutY="78.0" prefHeight="200.0" prefWidth="556.0">
+      <TableView fx:id="tvServicios" layoutX="18.0" layoutY="54.0" prefHeight="242.0" prefWidth="564.0">
         <columns>
-          <TableColumn fx:id="clNombre" prefWidth="75.0" text="Nombre" />
-          <TableColumn fx:id="clDuracion" prefWidth="75.0" text="Duracion" />
+          <TableColumn fx:id="clNombre" prefWidth="66.0" text="Nombre" />
+            <TableColumn fx:id="clDuracion" prefWidth="66.0" text="Duracion" />
             <TableColumn fx:id="clPrecio" prefWidth="75.0" text="Precio" />
             <TableColumn fx:id="clEstado" prefWidth="75.0" text="Estado" />
         </columns>
       </TableView>
-<<<<<<< HEAD
-      <Button fx:id="btAgregarServicio" layoutX="69.0" layoutY="335.0" mnemonicParsing="false" text="Agregar Servicios">
-=======
-      <Button layoutX="69.0" layoutY="335.0" mnemonicParsing="false" onAction="#agregarServicios" text="Agregar Servicios">
->>>>>>> 9db6be68a3cb90ec1930509a7edbb3a373009272
-         <effect>
-            <DropShadow />
-         </effect>
+      <Button fx:id="btAgregarServicio" layoutX="110.0" layoutY="352.0" mnemonicParsing="false" text="Agregar Servicio">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
-      </Button>
-      <Button fx:id="btEditarServicio" layoutX="234.0" layoutY="335.0" mnemonicParsing="false" text="Editar Servicio">
          <effect>
             <DropShadow />
          </effect>
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
       </Button>
-<<<<<<< HEAD
-      <Button fx:id="btEliminarServicio" layoutX="373.0" layoutY="335.0" mnemonicParsing="false" text="Eliminar Servicio">
-=======
-      <Button layoutX="455.0" layoutY="335.0" mnemonicParsing="false" onAction="#eliminarServicios" text="Eliminar Servicio">
->>>>>>> 9db6be68a3cb90ec1930509a7edbb3a373009272
+      <Button fx:id="btEditarServicio" layoutX="233.0" layoutY="352.0" mnemonicParsing="false" text="Editar Servicio">
          <effect>
             <DropShadow />
          </effect>
@@ -58,19 +42,26 @@
          </font>
       </Button>
       <Button fx:id="btAtras" layoutY="11.0" mnemonicParsing="false" onAction="#volverMenu" style="-fx-background-color: #1B2430;" text="Atras" textFill="WHITE">
-         <graphic>
-            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" translateX="3.0">
-               <image>
-                  <Image url="@../../../Imagenes/IconAtras.png" />
-               </image>
-            </ImageView>
-         </graphic>
          <font>
             <Font size="18.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagenes/IconAtras.png" />
+               </image></ImageView>
+         </graphic>
          <padding>
             <Insets left="14.0" />
          </padding>
+      </Button>
+      <Button fx:id="btEliminarServicio" layoutX="339.0" layoutY="352.0" mnemonicParsing="false" text="Eliminar Servicio">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </Button>
    </children>
 </AnchorPane>

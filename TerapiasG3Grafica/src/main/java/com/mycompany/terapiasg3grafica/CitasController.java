@@ -8,6 +8,8 @@ package com.mycompany.terapiasg3grafica;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +27,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import modelo.Cita;
+import modelo.Cliente;
+import modelo.Empleado;
 /**
  *
  * @author dell
@@ -37,7 +41,7 @@ public class CitasController implements Initializable{
     @FXML
     private AnchorPane anchorPane;
     @FXML
-    private TableView tvCitas;
+    private TableView<Cita> tvCitas;
     @FXML
     private TableColumn<Cita,String> clCliente;
     @FXML
@@ -65,34 +69,26 @@ public class CitasController implements Initializable{
     private TextField txtBuscar;
     
     @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-        cargarDatos();
-    }
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        clCliente.setCellValueFactory(new PropertyValueFactory<Cita,String>("cliente"));
+        clTerapista.setCellValueFactory(new PropertyValueFactory<Cita,String>("empleadoC"));
+        clFecha.setCellValueFactory(new PropertyValueFactory<Cita,String>("fechaC"));
+        clHora.setCellValueFactory(new PropertyValueFactory<Cita,String>("hora"));
+        
+        
+        tvCitas.setItems(getCitas());
+        
+        
+    }    
     
     
-    public void cargarDatos(){
-        lbCitas = new Label();
-        lbCitas.setText("Citas");
-        anchorPane = new AnchorPane();
-        tvCitas = new TableView();
-        
-        clCliente = new TableColumn<>("Cliente");
-        clCliente.setCellValueFactory(new PropertyValueFactory<>("Cliente"));
-        clTerapista = new TableColumn<>("Terapista");
-        clTerapista.setCellValueFactory(new PropertyValueFactory<>("Empleado"));
-        clServicio = new TableColumn<>("Servicio");
-        clServicio.setCellValueFactory(new PropertyValueFactory<>("Servicio"));
-        clFecha = new TableColumn<>("Fecha");
-        clFecha.setCellValueFactory(new PropertyValueFactory<>("Fecha"));
-        clHora = new TableColumn<>("Hora");
-        clHora.setCellValueFactory(new PropertyValueFactory<>("Hora"));
-        
-        tvCitas.getColumns().add(clCliente);
-        tvCitas.getColumns().add(clTerapista);
-        tvCitas.getColumns().add(clServicio);
-        tvCitas.getColumns().add(clFecha);
-        tvCitas.getColumns().add(clHora);
-        
+    public ObservableList<Cita> getCitas(){
+        ObservableList<Cita> citas = FXCollections.observableArrayList();
+        Cliente cl1 = new Cliente("datos de representante cl1","09333333333","Daniela","0944444444","daniela@correo.com");
+        Empleado emp1 = new Empleado(true,"0911111111","Jorge","09222222222","jorge@correo.com");
+        citas.add(new Cita("26/06/2022","16:00",cl1,emp1));
+        return citas;
     }
     
     

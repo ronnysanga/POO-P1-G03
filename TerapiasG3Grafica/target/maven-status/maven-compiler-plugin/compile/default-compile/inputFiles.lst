@@ -1,8 +1,8 @@
-<<<<<<< HEAD
 C:\Users\sixbo\GIT\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\AtencionesController.java
 C:\Users\sixbo\GIT\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\EmpleadosController.java
 C:\Users\sixbo\GIT\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\ClientesController.java
 C:\Users\sixbo\GIT\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\Juego1Controller.java
+C:\Users\sixbo\GIT\POO-P1-G03\TerapiasG3Grafica\src\main\java\modelo\Atencion.java
 C:\Users\sixbo\GIT\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\CitasController.java
 C:\Users\sixbo\GIT\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\MenuController.java
 C:\Users\sixbo\GIT\POO-P1-G03\TerapiasG3Grafica\src\main\java\modelo\Servicios.java
@@ -16,19 +16,3 @@ C:\Users\sixbo\GIT\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\tera
 C:\Users\sixbo\GIT\POO-P1-G03\TerapiasG3Grafica\src\main\java\modelo\Cita.java
 C:\Users\sixbo\GIT\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\AtencionController.java
 C:\Users\sixbo\GIT\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\ActividadesController.java
-=======
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\ClientesController.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\App.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\CitasController.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\EmpleadosController.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\modelo\Empleado.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\AtencionesController.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\modelo\Cita.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\modelo\Persona.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\MenuController.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\modelo\Servicios.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\module-info.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\modelo\Atencion.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\modelo\Cliente.java
-C:\Users\Michelle\POO-P1-G03\TerapiasG3Grafica\src\main\java\com\mycompany\terapiasg3grafica\ServiciosController.java
->>>>>>> 9db6be68a3cb90ec1930509a7edbb3a373009272

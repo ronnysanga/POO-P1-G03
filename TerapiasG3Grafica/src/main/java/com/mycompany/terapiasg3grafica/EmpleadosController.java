@@ -6,9 +6,14 @@
 package com.mycompany.terapiasg3grafica;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,21 +24,22 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
+import modelo.Cliente;
 import modelo.Empleado;
+import modelo.Servicios;
 
 /**
  *
  * @author dell
  */
-public class EmpleadosController {
+public class EmpleadosController implements Initializable{
     private Stage stage;
     private Scene scene;
 
     @FXML
     private AnchorPane anchorPane;
     @FXML
-    private TableView tvEmpleados;
+    private TableView<Empleado> tvEmpleados;
     @FXML
     private TableColumn<Empleado,String> clEstado;
     @FXML
@@ -58,33 +64,26 @@ public class EmpleadosController {
     @FXML
     private Button btEliminarEmpleado;
     
+    /**
+     * Initializes the controller class.
+     * @param url
+     * @param rb
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+        clEstado.setCellValueFactory(new PropertyValueFactory<Empleado,String>("estado"));
+        clCedula.setCellValueFactory(new PropertyValueFactory<Empleado,String>("cedula"));
+        clNombre.setCellValueFactory(new PropertyValueFactory<Empleado,String>("nombre"));
+        clTelefono.setCellValueFactory(new PropertyValueFactory<Empleado,String>("telefono"));
+        clEmail.setCellValueFactory(new PropertyValueFactory<Empleado,String>("email"));
+        tvEmpleados.setItems(getEmpleados());
+    }    
     
-    public void cargarDatos(){
-        lbEmpleados = new Label();
-        lbEmpleados.setText("Empleados");
-        anchorPane = new AnchorPane();
-        tvEmpleados = new TableView();
-        clEstado = new TableColumn<>("Estado");
-        clEstado.setCellValueFactory(new PropertyValueFactory<>("Estado"));
-        clCedula = new TableColumn<>("Cedula");
-        clCedula.setCellValueFactory(new PropertyValueFactory<>("Cedula"));
-        clNombre = new TableColumn<>("Nombre");
-        clNombre.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
-        clTelefono = new TableColumn<>("Telefono");
-        clTelefono.setCellValueFactory(new PropertyValueFactory<>("Telefono"));
-        clEmail = new TableColumn<>("Email");
-        clEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
-        
-        tvEmpleados.getColumns().add(clEstado);
-        tvEmpleados.getColumns().add(clCedula);
-        tvEmpleados.getColumns().add(clNombre);
-        tvEmpleados.getColumns().add(clTelefono);
-        tvEmpleados.getColumns().add(clEmail);
-        
-        tvEmpleados.getItems().add(new Empleado(true, "099999999", "Daniela", "0988888888", "daniela@correo.com"));
-        anchorPane.getChildren().add(lbEmpleados);
-        anchorPane.getChildren().add(tvEmpleados);
-        
+    public ObservableList<Empleado> getEmpleados(){
+        ObservableList<Empleado> empleados = FXCollections.observableArrayList();
+        empleados.add(new Empleado(true,"0911111111","Jorge","09222222222","jorge@correo.com"));
+        return empleados;
     }
     
     @FXML

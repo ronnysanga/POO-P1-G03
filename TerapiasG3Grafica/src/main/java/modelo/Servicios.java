@@ -13,6 +13,7 @@ public class Servicios{
     private int duracionAtencion;
     private double precio;
     private boolean estado;
+
     
     //constructores
     public Servicios(String nombreServ,int duracionAtencion,double precio,boolean estado){
@@ -20,6 +21,7 @@ public class Servicios{
         this.duracionAtencion = duracionAtencion;
         this.precio = precio;
         this.estado = estado;
+ 
     }
 
 
@@ -56,6 +58,22 @@ public class Servicios{
         this.estado = estado;
         
     }
+
+    public static String verEstadoEmpleado(boolean estado){
+        String estadoactual = "";
+        if(estado){
+            estadoactual = "Activo";
+        }else{
+            estadoactual = "Inactivo";
+        }
+        return estadoactual;
+    }
+    
+    @Override
+    public String toString() {
+        return "Servicios{" + "nombreServ=" + nombreServ + ", duracionAtencion=" + String.valueOf(duracionAtencion) + ", precio=" + String.valueOf(precio) + ", estado=" + verEstadoEmpleado(estado) + '}';
+    }
+    
     
     
     

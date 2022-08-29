@@ -22,7 +22,6 @@
         <columns>
             <TableColumn fx:id="clCliente" prefWidth="75.0" text="Cliente" />
             <TableColumn fx:id="clTerapista" prefWidth="75.0" text="Terapista" />
-            <TableColumn fx:id="clServicio" prefWidth="75.0" text="Servicio" />
           <TableColumn fx:id="clFecha" prefWidth="75.0" text="Fecha" />
           <TableColumn fx:id="clHora" prefWidth="75.0" text="Hora" />
         </columns>

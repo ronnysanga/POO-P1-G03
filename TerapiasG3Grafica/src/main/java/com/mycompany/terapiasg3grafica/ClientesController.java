@@ -4,6 +4,8 @@ package com.mycompany.terapiasg3grafica;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -64,37 +66,21 @@ public class ClientesController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         clDatoRepres.setCellValueFactory(new PropertyValueFactory<Cliente,String>("datoRepres"));
+        clCedula.setCellValueFactory(new PropertyValueFactory<Cliente,String>("cedula"));
         clNombre.setCellValueFactory(new PropertyValueFactory<Cliente,String>("nombre"));
+        clTelefono.setCellValueFactory(new PropertyValueFactory<Cliente,String>("telefono"));
+        clEmail.setCellValueFactory(new PropertyValueFactory<Cliente,String>("email"));
+        
+        tvClientes.setItems(getClientes());
         
         
     }    
     
-    public void cargarDatos(){
-        lbClientes = new Label();
-        lbClientes.setText("Clientes");
-        anchorPane = new AnchorPane();
-        tvClientes = new TableView();
-        clDatoRepres = new TableColumn<>("Datos de Representante");
-        clDatoRepres.setCellValueFactory(new PropertyValueFactory<>("DatoRepres"));
-        clCedula = new TableColumn<>("Cedula");
-        clCedula.setCellValueFactory(new PropertyValueFactory<>("Cedula"));
-        clNombre = new TableColumn<>("Nombre");
-        clNombre.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
-        clTelefono = new TableColumn<>("Telefono");
-        clTelefono.setCellValueFactory(new PropertyValueFactory<>("Telefono"));
-        clEmail = new TableColumn<>("Email");
-        clEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
-        
-        tvClientes.getColumns().add(clDatoRepres);
-        tvClientes.getColumns().add(clCedula);
-        tvClientes.getColumns().add(clNombre);
-        tvClientes.getColumns().add(clTelefono);
-        tvClientes.getColumns().add(clEmail);
-        
-        tvClientes.getItems().add(new Cliente("Dato Representante 1", "099999999", "Daniela", "0988888888", "daniela@correo.com"));
-        anchorPane.getChildren().add(lbClientes);
-        anchorPane.getChildren().add(tvClientes);
-        
+    
+    public ObservableList<Cliente> getClientes(){
+        ObservableList<Cliente> clientes = FXCollections.observableArrayList();
+        clientes.add(new Cliente("Dato Representante 1", "099999999", "Daniela", "0988888888", "daniela@correo.com"));
+        return clientes;
     }
     
     
