@@ -1,3 +1,0 @@
-TerapiaLenguaje,120,120,true
-TerapiaPsicopedagógica,60,10,true
-Terapia,120,30,true

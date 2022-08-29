@@ -79,40 +79,22 @@ public class ServiciosController implements Initializable {
         
     }    
     
-    public static ArrayList<Servicios> obtenerServicios(String ruta){
-        ArrayList<Servicios> servicios = new ArrayList<>();
-        //completar para leer el archivo y llenar la lista
-        try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
-            String sCurrentLine;
-            while ((sCurrentLine = br.readLine()) != null) {
-                String[] datos = sCurrentLine.split(",");
-//                NombreServicio,Duracion,Precio,Estado
-                String nombreServicio = datos[0];
-                int duracion = Integer.valueOf(datos[1]);
-                double precio = Double.valueOf(datos[2]);
-                boolean estado = Boolean.valueOf(datos[3]);
-                Servicios s1 = new Servicios(nombreServicio,duracion,precio,estado);
-                servicios.add(s1);
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
 
-        return servicios;
-}
     
+    public static String rutaServicio = "servicios.tx";
     
     public ObservableList<Servicios> getServicios(){
-        ObservableList<Servicios> servicios = FXCollections.observableArrayList();
         
-        ArrayList<Servicios> lista_serv = obtenerServicios("serviciosv1.txt");
+        ObservableList<Servicios> serviciosL = FXCollections.observableArrayList();
+        
+        ArrayList<Servicios> lista_serv = Servicios.obtenerServicios(rutaServicio);
         for(Servicios s: lista_serv){
 //            Servicios s1 = s;   
 //            servicios.add(new Servicios("Terapia de lenguaje",120,20.00,true));
-            servicios.add(new Servicios(s.getNombreServ(),s.getDuracionAtencion(),s.getPrecio(),s.isEstado()));
+            serviciosL.add(new Servicios(s.getNombreServ(),s.getDuracionAtencion(),s.getPrecio(),s.isEstado()));
         }
         
-        return servicios;
+        return serviciosL;
     }
         @FXML
         private void volverMenu(ActionEvent event) throws IOException {

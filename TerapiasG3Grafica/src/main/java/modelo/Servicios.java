@@ -69,6 +69,28 @@ public class Servicios{
         return estadoactual;
     }
     
+    public static ArrayList<Servicios> obtenerServicios(String ruta){
+        ArrayList<Servicios> serviciosp = new ArrayList<>();
+        //completar para leer el archivo y llenar la lista
+        try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
+           String line = br.readLine();
+            while ((line = br.readLine()) != null) {
+                String[] datos = line.split(",");
+//                NombreServicio,Duracion,Precio,Estado
+                String nombreServicio = datos[0];
+                int duracion = Integer.valueOf(datos[1]);
+                double precio = Double.valueOf(datos[2]);
+                boolean estado = Boolean.valueOf(datos[3]);
+                Servicios s1 = new Servicios(nombreServicio,duracion,precio,estado);
+                serviciosp.add(s1);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return serviciosp;
+}
+    
     @Override
     public String toString() {
         return "Servicios{" + "nombreServ=" + nombreServ + ", duracionAtencion=" + String.valueOf(duracionAtencion) + ", precio=" + String.valueOf(precio) + ", estado=" + verEstadoEmpleado(estado) + '}';
