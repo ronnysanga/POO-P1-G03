@@ -25,7 +25,11 @@
             <TableColumn fx:id="clEstado" prefWidth="75.0" text="Estado" />
         </columns>
       </TableView>
+<<<<<<< HEAD
       <Button fx:id="btAgregarServicio" layoutX="69.0" layoutY="335.0" mnemonicParsing="false" text="Agregar Servicios">
+=======
+      <Button layoutX="69.0" layoutY="335.0" mnemonicParsing="false" onAction="#agregarServicios" text="Agregar Servicios">
+>>>>>>> 9db6be68a3cb90ec1930509a7edbb3a373009272
          <effect>
             <DropShadow />
          </effect>
@@ -41,7 +45,11 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+<<<<<<< HEAD
       <Button fx:id="btEliminarServicio" layoutX="373.0" layoutY="335.0" mnemonicParsing="false" text="Eliminar Servicio">
+=======
+      <Button layoutX="455.0" layoutY="335.0" mnemonicParsing="false" onAction="#eliminarServicios" text="Eliminar Servicio">
+>>>>>>> 9db6be68a3cb90ec1930509a7edbb3a373009272
          <effect>
             <DropShadow />
          </effect>

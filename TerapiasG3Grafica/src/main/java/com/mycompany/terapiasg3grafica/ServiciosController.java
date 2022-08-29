@@ -7,6 +7,8 @@ package com.mycompany.terapiasg3grafica;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,10 +17,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -44,6 +49,10 @@ public class ServiciosController implements Initializable {
     private TableColumn<Servicios,String> clPrecio;
     @FXML
     private TableColumn<Servicios,String> clEstado;
+    
+   
+    
+    
     
     @FXML
     private Label lbServicios;
@@ -92,7 +101,30 @@ public class ServiciosController implements Initializable {
             stage.setScene(scene);
             stage.show();     
         }
+        
+        
+     /*   
+        @FXML
+        private void agregarServicios(ActionEvent event) {
+            System.out.println("agg");
+            String nombre = campoNombre.getText();
+            int duracion = Integer.parseInt(campoDuracion.getText());
+            double precio = Double.parseDouble(campoPrecio.getText());
+            String estado = comboBoxServicios.getValue();
+            servicios.add(new Servicio(nombre,duracion,precio,App.stringABoolean(estado)));
+            tablaServicios.getItems().setAll(servicios);
+            Servicio.sobreescribirFichero(servicios);
+            reestablecer(campoNombre,campoPrecio,campoDuracion,comboBoxServicios);
+    }
+    
+        
+        */
+        
+        
+        
+    }
     
 
     
-}
+
+

@@ -1,5 +1,10 @@
 package modelo;
 
+import com.mycompany.terapiasg3grafica.App;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Servicios{
@@ -49,6 +54,9 @@ public class Servicios{
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+        
     }
+    
+    
     
 }

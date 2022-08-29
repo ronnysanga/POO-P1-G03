@@ -4,7 +4,6 @@ com\mycompany\terapiasg3grafica\ClientesController.class
 com\mycompany\terapiasg3grafica\EmpleadosController.class
 com\mycompany\terapiasg3grafica\MenuController.class
 modelo\Empleado.class
-com\mycompany\terapiasg3grafica\ServiciosController.class
 modelo\Cliente.class
 modelo\Persona.class
 modelo\Servicios.class
