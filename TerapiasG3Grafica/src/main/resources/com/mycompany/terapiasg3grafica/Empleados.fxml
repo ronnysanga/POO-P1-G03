@@ -13,20 +13,20 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1B2430;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.terapiasg3grafica.EmpleadosController">
     <children>
-      <Label fx:id="lbEmpleados" layoutX="205.0" layoutY="11.0" prefHeight="39.0" prefWidth="165.0" text="Empleados" textAlignment="RIGHT" textFill="#dfb5ff">
+      <Label layoutX="205.0" layoutY="11.0" prefHeight="39.0" prefWidth="165.0" text="Empleados" textAlignment="RIGHT" textFill="#dfb5ff">
          <font>
             <Font name="Cooper Black" size="29.0" />
          </font></Label>
       <TableView fx:id="tvEmpleados" layoutX="18.0" layoutY="54.0" prefHeight="242.0" prefWidth="564.0">
         <columns>
-            <TableColumn prefWidth="75.0" text="Estado" />
-          <TableColumn prefWidth="66.0" text="Cedula" />
-            <TableColumn prefWidth="66.0" text="Nombre" />
-            <TableColumn prefWidth="75.0" text="Telefono" />
-            <TableColumn prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="clEstado" prefWidth="75.0" text="Estado" />
+          <TableColumn fx:id="clCedula" prefWidth="66.0" text="Cedula" />
+            <TableColumn fx:id="clNombre" prefWidth="66.0" text="Nombre" />
+            <TableColumn fx:id="clTelefono" prefWidth="75.0" text="Telefono" />
+            <TableColumn fx:id="clEmail" prefWidth="75.0" text="Email" />
         </columns>
       </TableView>
-      <Button layoutX="92.0" layoutY="341.0" mnemonicParsing="false" text="Agregar">
+      <Button fx:id="btAgregarEmpleado" layoutX="150.0" layoutY="340.0" mnemonicParsing="false" text="Agregar">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -34,15 +34,15 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button layoutX="264.0" layoutY="341.0" mnemonicParsing="false" text="Editar">
+      <Button fx:id="btEditarEmpleado" layoutX="264.0" layoutY="341.0" mnemonicParsing="false" text="Editar">
          <effect>
             <DropShadow />
          </effect>
          <font>
-            <Font name="Sylfaen" size="12.0" />
+            <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="431.0" layoutY="341.0" mnemonicParsing="false" text="Eliminar">
+      <Button fx:id="btEliminarEmpleado" layoutX="362.0" layoutY="341.0" mnemonicParsing="false" text="Eliminar">
          <effect>
             <DropShadow />
          </effect>

@@ -33,7 +33,7 @@ public class ClientesController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
     @FXML
-    private TableView tvClientes;
+    private TableView<Cliente> tvClientes;
     @FXML
     private TableColumn<Cliente,String> clNombre;
     @FXML
@@ -49,6 +49,11 @@ public class ClientesController implements Initializable {
     
     @FXML
     private Button btAtras;
+    @FXML
+    private Button btAgregarCliente;
+    @FXML
+    private Button btEditarCliente;
+   
    
     /**
      * Initializes the controller class.
@@ -58,7 +63,10 @@ public class ClientesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        cargarDatos();
+        clDatoRepres.setCellValueFactory(new PropertyValueFactory<Cliente,String>("datoRepres"));
+        clNombre.setCellValueFactory(new PropertyValueFactory<Cliente,String>("nombre"));
+        
+        
     }    
     
     public void cargarDatos(){

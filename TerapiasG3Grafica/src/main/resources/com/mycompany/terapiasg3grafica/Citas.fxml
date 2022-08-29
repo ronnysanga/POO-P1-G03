@@ -20,22 +20,14 @@
          </font></Label>
       <TableView fx:id="tvCitas" layoutX="22.0" layoutY="109.0" prefHeight="200.0" prefWidth="556.0">
         <columns>
-            <TableColumn prefWidth="75.0" text="Cliente" />
-            <TableColumn prefWidth="75.0" text="Terapista" />
-            <TableColumn prefWidth="75.0" text="Servicio" />
-          <TableColumn prefWidth="75.0" text="Fecha" />
-          <TableColumn prefWidth="75.0" text="Hora" />
+            <TableColumn fx:id="clCliente" prefWidth="75.0" text="Cliente" />
+            <TableColumn fx:id="clTerapista" prefWidth="75.0" text="Terapista" />
+            <TableColumn fx:id="clServicio" prefWidth="75.0" text="Servicio" />
+          <TableColumn fx:id="clFecha" prefWidth="75.0" text="Fecha" />
+          <TableColumn fx:id="clHora" prefWidth="75.0" text="Hora" />
         </columns>
       </TableView>
-      <Button layoutX="191.0" layoutY="335.0" mnemonicParsing="false" text="Agregar Citas">
-         <effect>
-            <DropShadow />
-         </effect>
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="300.0" layoutY="335.0" mnemonicParsing="false" text="Eliminar Citas">
+      <Button fx:id="btCrearCita" layoutX="113.0" layoutY="335.0" mnemonicParsing="false" text="Agregar Citas">
          <effect>
             <DropShadow />
          </effect>
@@ -58,11 +50,27 @@
             <Insets left="14.0" />
          </padding>
       </Button>
-      <TextField layoutX="93.0" layoutY="73.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="txtBuscar" layoutX="93.0" layoutY="73.0" prefHeight="25.0" prefWidth="149.0" />
       <Label layoutX="23.0" layoutY="70.0" prefHeight="17.0" prefWidth="81.0" text="Cliente:" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
+      <Button fx:id="btRegistrarAtencion" layoutX="224.0" layoutY="335.0" mnemonicParsing="false" onAction="#IrARegistrarAtencion" text="Registrar Atención">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btConsultarActividades" layoutX="356.0" layoutY="335.0" mnemonicParsing="false" onAction="#verActividades" text="Consultar Actividades">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -50,6 +50,12 @@ public class ServiciosController implements Initializable {
     
     @FXML
     private Button btAtras;
+    @FXML
+    private Button btAgregarServicio;
+    @FXML
+    private Button btEditarServicio;
+    @FXML
+    private Button btEliminarServicio;
     
 
     @Override

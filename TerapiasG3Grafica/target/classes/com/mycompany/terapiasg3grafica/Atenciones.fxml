@@ -5,44 +5,28 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1B2430;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.terapiasg3grafica.ServiciosController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1B2430;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.terapiasg3grafica.AtencionesController">
    <children>
-      <Label fx:id="lbServicios" layoutX="242.0" layoutY="30.0" prefHeight="29.0" prefWidth="122.0" text="Servicios" textFill="#c8d8ff">
+      <Label fx:id="lbCitas" layoutX="171.0" layoutY="25.0" prefHeight="29.0" prefWidth="292.0" text="Consultar atenciones" textFill="#c8d8ff">
          <font>
             <Font name="Cooper Black" size="25.0" />
          </font></Label>
-      <TableView layoutX="22.0" layoutY="78.0" prefHeight="200.0" prefWidth="556.0">
+      <TableView fx:id="tvAtenciones" layoutX="22.0" layoutY="109.0" prefHeight="200.0" prefWidth="556.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Nombre" />
-          <TableColumn prefWidth="75.0" text="Duracion" />
-            <TableColumn prefWidth="75.0" text="Precio" />
-            <TableColumn prefWidth="75.0" text="Estado" />
+            <TableColumn fx:id="clFecha" prefWidth="75.0" text="Fecha" />
+          <TableColumn fx:id="clHora" prefWidth="75.0" text="Hora" />
+            <TableColumn fx:id="clCliente" prefWidth="75.0" text="Cliente" />
+            <TableColumn fx:id="clDuracion" prefWidth="75.0" text="Duracion" />
+          <TableColumn fx:id="clTerapista" prefWidth="75.0" text="Terapista" />
         </columns>
       </TableView>
-      <Button layoutX="69.0" layoutY="335.0" mnemonicParsing="false" text="Agregar Servicios">
-         <effect>
-            <DropShadow />
-         </effect>
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="266.0" layoutY="335.0" mnemonicParsing="false" text="Editar Servicio">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Button>
-      <Button layoutX="455.0" layoutY="335.0" mnemonicParsing="false" text="Eliminar Servicio">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Button>
       <Button fx:id="btAtras" layoutY="11.0" mnemonicParsing="false" onAction="#volverMenu" style="-fx-background-color: #1B2430;" text="Atras" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" translateX="3.0">
@@ -57,6 +41,20 @@
          <padding>
             <Insets left="14.0" />
          </padding>
+      </Button>
+      <TextField fx:id="txtBuscarCliente" layoutX="93.0" layoutY="73.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="23.0" layoutY="70.0" prefHeight="17.0" prefWidth="81.0" text="Cédula:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btConsultarAtencion" layoutX="224.0" layoutY="335.0" mnemonicParsing="false" text="Consultar Atencion">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </Button>
    </children>
 </AnchorPane>

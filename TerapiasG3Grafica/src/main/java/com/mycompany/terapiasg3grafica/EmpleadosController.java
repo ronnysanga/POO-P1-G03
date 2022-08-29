@@ -51,6 +51,12 @@ public class EmpleadosController {
     
     @FXML
     private Button btAtras;
+    @FXML
+    private Button btAgregarEmpleado;
+    @FXML
+    private Button btEditarEmpleado;
+    @FXML
+    private Button btEliminarEmpleado;
     
     
     public void cargarDatos(){

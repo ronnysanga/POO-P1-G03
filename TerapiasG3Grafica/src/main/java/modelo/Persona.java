@@ -1,6 +1,7 @@
 package modelo;
 
 import java.util.Scanner;
+import javafx.beans.property.SimpleStringProperty;
 
 public class Persona {
     private String cedula;

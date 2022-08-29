@@ -19,14 +19,14 @@
          </font></Label>
       <TableView fx:id="tvClientes" layoutX="18.0" layoutY="54.0" prefHeight="242.0" prefWidth="564.0">
         <columns>
-          <TableColumn prefWidth="154.0" text="Datos del representante" />
-          <TableColumn prefWidth="66.0" text="Cedula" />
-            <TableColumn prefWidth="66.0" text="Nombre" />
-            <TableColumn prefWidth="75.0" text="Telefono" />
-            <TableColumn prefWidth="75.0" text="Email" />
+          <TableColumn fx:id="clDatoRepres" prefWidth="154.0" text="Datos del representante" />
+          <TableColumn fx:id="clCedula" prefWidth="66.0" text="Cedula" />
+            <TableColumn fx:id="clNombre" prefWidth="66.0" text="Nombre" />
+            <TableColumn fx:id="clTelefono" prefWidth="75.0" text="Telefono" />
+            <TableColumn fx:id="clEmail" prefWidth="75.0" text="Email" />
         </columns>
       </TableView>
-      <Button layoutX="92.0" layoutY="341.0" mnemonicParsing="false" text="Agregar">
+      <Button fx:id="btAgregarCliente" layoutX="151.0" layoutY="352.0" mnemonicParsing="false" text="Agregar Cliente">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -34,15 +34,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button layoutX="264.0" layoutY="341.0" mnemonicParsing="false" text="Editar">
-         <effect>
-            <DropShadow />
-         </effect>
-         <font>
-            <Font name="Sylfaen" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="431.0" layoutY="341.0" mnemonicParsing="false" text="Eliminar">
+      <Button fx:id="btEditarCliente" layoutX="321.0" layoutY="352.0" mnemonicParsing="false" text="Editar Cliente">
          <effect>
             <DropShadow />
          </effect>

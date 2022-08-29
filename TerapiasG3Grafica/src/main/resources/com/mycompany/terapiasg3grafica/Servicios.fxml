@@ -17,15 +17,15 @@
          <font>
             <Font name="Cooper Black" size="25.0" />
          </font></Label>
-      <TableView layoutX="22.0" layoutY="78.0" prefHeight="200.0" prefWidth="556.0">
+      <TableView fx:id="tvServicios" layoutX="22.0" layoutY="78.0" prefHeight="200.0" prefWidth="556.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Nombre" />
-          <TableColumn prefWidth="75.0" text="Duracion" />
-            <TableColumn prefWidth="75.0" text="Precio" />
-            <TableColumn prefWidth="75.0" text="Estado" />
+          <TableColumn fx:id="clNombre" prefWidth="75.0" text="Nombre" />
+          <TableColumn fx:id="clDuracion" prefWidth="75.0" text="Duracion" />
+            <TableColumn fx:id="clPrecio" prefWidth="75.0" text="Precio" />
+            <TableColumn fx:id="clEstado" prefWidth="75.0" text="Estado" />
         </columns>
       </TableView>
-      <Button layoutX="69.0" layoutY="335.0" mnemonicParsing="false" text="Agregar Servicios">
+      <Button fx:id="btAgregarServicio" layoutX="69.0" layoutY="335.0" mnemonicParsing="false" text="Agregar Servicios">
          <effect>
             <DropShadow />
          </effect>
@@ -33,15 +33,21 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="266.0" layoutY="335.0" mnemonicParsing="false" text="Editar Servicio">
+      <Button fx:id="btEditarServicio" layoutX="234.0" layoutY="335.0" mnemonicParsing="false" text="Editar Servicio">
          <effect>
             <DropShadow />
          </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </Button>
-      <Button layoutX="455.0" layoutY="335.0" mnemonicParsing="false" text="Eliminar Servicio">
+      <Button fx:id="btEliminarServicio" layoutX="373.0" layoutY="335.0" mnemonicParsing="false" text="Eliminar Servicio">
          <effect>
             <DropShadow />
          </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </Button>
       <Button fx:id="btAtras" layoutY="11.0" mnemonicParsing="false" onAction="#volverMenu" style="-fx-background-color: #1B2430;" text="Atras" textFill="WHITE">
          <graphic>
